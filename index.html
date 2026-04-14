@@ -14,3 +14,144 @@
 
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEGO Expo Sébastien</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 30px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #444;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 20px 50px;
+    }
+
+    .card {
+      background-color: white;
+      width: 250px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      background-color: #eee;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #111;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🧱 LEGO Minifigure Exhibition</h1>
+    <p class="intro">
+      Welcome to Sébastien's LEGO collection.
+      Scan the QR codes or explore the figures below to discover fun facts and history.
+    </p>
+  </header>
+
+  <section class="gallery">
+
+    <div class="card">
+      <img src="images/timmy.jpg" alt="Timmy">
+      <div class="card-content">
+        <h2>Timmy</h2>
+        <p>First LEGO minifigure with a nose.</p>
+        <a href="timmy.html">Voir plus</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/batman-wings.jpg" alt="Batman avec ailes">
+      <div class="card-content">
+        <h2>Batman avec ailes</h2>
+        <p>Une figurine marquante avec un design unique et spectaculaire.</p>
+        <a href="batman-wings.html">Voir plus</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/leo-davinci.jpg" alt="Léonard de Vinci">
+      <div class="card-content">
+        <h2>Léonard de Vinci</h2>
+        <p>Personnage historique représenté en version LEGO officielle.</p>
+        <a href="leonard-de-vinci.html">Voir plus</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    © Sébastien LEGO Expo
+  </footer>
+
+</body>
+</html>
