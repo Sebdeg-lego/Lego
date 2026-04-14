@@ -1,19 +1,209 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LEGO Expo Sébastien</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 30px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 20px 50px;
+    }
+
+    .card {
+      background-color: white;
+      width: 250px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      background-color: #eee;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+      min-height: 90px;
+      line-height: 1.4;
+    }
+
+    footer {
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
 </head>
+<body>
 
-<body style="text-align:center; font-family:Arial;">
+  <header>
+    <h1>🧱 LEGO Minifigure Exhibition</h1>
+    <p class="intro">
+      Welcome to Sébastien's LEGO collection.
+      Scan the QR codes or explore the figures below to discover fun facts and history.
+    </p>
+  </header>
 
-<h1>🧱 LEGO Minifigure Exhibition</h1>
+  <section class="gallery">
 
-<p>Bienvenue dans la collection LEGO de Sébastien</p>
+    <div class="card">
+      <img src="images/1978-classic-minifigure.jpg" alt="Première vraie minifigurine LEGO 1978">
+      <div class="card-content">
+        <h2>1978 — Première vraie minifigurine LEGO</h2>
+        <p>Première vraie minifigurine LEGO avec bras et jambes articulés et le sourire classique.</p>
+      </div>
+    </div>
 
-<p>Scan les QR codes pour découvrir chaque figurine</p>
+    <div class="card">
+      <img src="images/1979-freddy-fox.jpg" alt="Freddy Fox Fabuland 1979">
+      <div class="card-content">
+        <h2>1979 — Freddy Fox / Fabuland</h2>
+        <p>Premières figurines LEGO Fabuland à tête d’animal.</p>
+      </div>
+    </div>
 
-<img src="images/1978-classic-minifigure.jpg" width="200">
+    <div class="card">
+      <img src="images/1979-chef.jpg" alt="Premier chapeau de chef 1979">
+      <div class="card-content">
+        <h2>1979 — Premier chapeau de chef</h2>
+        <p>Première apparition du chapeau de chef dans l’univers LEGO minifigure.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/1980-top-hat.jpg" alt="Premier haut-de-forme 1980">
+      <div class="card-content">
+        <h2>1980 — Premier haut-de-forme</h2>
+        <p>Première apparition du chapeau haut-de-forme chez les minifigurines LEGO.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/1989-monkey.jpg" alt="Singe LEGO 1989">
+      <div class="card-content">
+        <h2>1989 — Singe à queue bouclée</h2>
+        <p>Le singe utilise des bras de minifigurine pour ses quatre membres.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/1989-pirate.jpg" alt="Pirate LEGO 1989">
+      <div class="card-content">
+        <h2>1989 — Pirate</h2>
+        <p>Premières minifigurines avec expressions faciales variées, jambe de bois et crochet.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/1992-freckles.jpg" alt="Première tête avec taches de rousseur 1992">
+      <div class="card-content">
+        <h2>1992 — Première tête avec taches de rousseur</h2>
+        <p>Première tête de minifigurine avec taches de rousseur et nouvel accessoire planche de surf.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/1993-beard-cape.jpg" alt="Barbe séparée et cape en tissu 1993">
+      <div class="card-content">
+        <h2>1993 — Barbe séparée et cape en tissu</h2>
+        <p>Première barbe séparée et première cape en tissu pour minifigurine.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/1995-crown.jpg" alt="Première couronne 1995">
+      <div class="card-content">
+        <h2>1995 — Première couronne</h2>
+        <p>Première couronne de minifigurine, avec nouveaux accessoires de plongée.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/1996-nose.jpg" alt="Première minifigurine avec nez 1996">
+      <div class="card-content">
+        <h2>1996 — Première minifigurine avec nez</h2>
+        <p>Première apparition d’un nez imprimé sur une minifigurine LEGO.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/2001-two-sided-face.jpg" alt="Premier visage double face 2001">
+      <div class="card-content">
+        <h2>2001 — Premier visage double face</h2>
+        <p>Première minifigurine avec visage double face et première tête phosphorescente.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/2002-spiderman.jpg" alt="Premier super héros LEGO 2002">
+      <div class="card-content">
+        <h2>2002 — Premier super héros LEGO</h2>
+        <p>Première minifigurine de super héros et introduction des jambes courtes.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/2003-nba.jpg" alt="Figurine NBA 2003">
+      <div class="card-content">
+        <h2>2003 — Figurines NBA</h2>
+        <p>Bras spéciaux, jambes à ressort, teintes de peau réalistes et première impression sur les bras.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    © Sébastien LEGO Expo
+  </footer>
 
 </body>
 </html>
