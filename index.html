@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -98,15 +97,15 @@
     .figure-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .figure-link {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 12px 14px;
-      border-radius: 12px;
+      gap: 14px;
+      padding: 12px;
+      border-radius: 14px;
       border: 1px solid #e8ded2;
       background: #fcfaf7;
       transition: background 0.2s ease, transform 0.2s ease;
@@ -118,8 +117,8 @@
     }
 
     .figure-number {
-      min-width: 36px;
-      height: 36px;
+      min-width: 38px;
+      height: 38px;
       border-radius: 999px;
       background: var(--accent);
       color: white;
@@ -128,12 +127,24 @@
       justify-content: center;
       font-weight: bold;
       font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .figure-thumb {
+      width: 62px;
+      height: 62px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #ececec;
+      border: 1px solid #e5dacb;
+      flex-shrink: 0;
     }
 
     .figure-text {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
+      min-width: 0;
     }
 
     .figure-text strong {
@@ -144,6 +155,7 @@
     .figure-text span {
       font-size: 13px;
       color: #666;
+      line-height: 1.4;
     }
 
     .detail {
@@ -340,8 +352,8 @@
         subtitle: "La naissance de la minifigurine classique",
         image: "images/1978-first-true-minifigure.jpg",
         tags: ["First", "Classic", "Town", "History"],
-        fr: "En 1978 apparaît la première vraie minifigurine LEGO telle qu’on la reconnaît encore aujourd’hui : tête jaune souriante, bras articulés, mains en forme de pince et jambes séparées. C’est l’un des plus grands tournants de toute l’histoire LEGO.",
-        en: "In 1978, the first true LEGO minifigure appears in the form we still recognize today: yellow smiling head, movable arms, claw hands, and separate legs. It is one of the biggest turning points in LEGO history.",
+        fr: "En 1978 apparaît la première vraie minifigurine LEGO telle qu’on la reconnaît encore aujourd’hui.",
+        en: "In 1978, the first true LEGO minifigure appears in the form we still recognize today.",
         facts: [
           "Première vraie minifigurine LEGO / First true LEGO minifigure"
         ]
@@ -353,8 +365,8 @@
         subtitle: "Première grande icône de l’espace LEGO",
         image: "images/1979-yellow-spaceman.jpg",
         tags: ["Space", "First", "Iconic"],
-        fr: "Le cosmonaute jaune est l’un des personnages les plus emblématiques de l’histoire LEGO. Il représente le début de l’âge d’or de l’espace classique et reste encore aujourd’hui une icône immédiatement reconnaissable.",
-        en: "The yellow spaceman is one of the most iconic characters in LEGO history. It represents the beginning of the golden age of classic space and remains instantly recognizable today.",
+        fr: "Le cosmonaute jaune est l’un des personnages les plus emblématiques de l’histoire LEGO.",
+        en: "The yellow spaceman is one of the most iconic characters in LEGO history.",
         facts: []
       },
       {
@@ -364,8 +376,8 @@
         subtitle: "Les têtes animales arrivent chez LEGO",
         image: "images/1979-freddy-fox.jpg",
         tags: ["Fabuland", "Animal", "First", "Fun"],
-        fr: "Freddy Fox représente l’arrivée des figurines LEGO Fabuland à tête d’animal. Cette gamme a une identité visuelle très différente, plus douce et plus narrative, pensée pour les jeunes enfants et les histoires de personnages.",
-        en: "Freddy Fox represents the arrival of LEGO Fabuland animal-headed figures. This line has a very different visual identity, softer and more story-driven, designed for younger children and character-based play.",
+        fr: "Freddy Fox représente l’arrivée des figurines LEGO Fabuland à tête d’animal.",
+        en: "Freddy Fox represents the arrival of LEGO Fabuland animal-headed figures.",
         facts: []
       },
       {
@@ -375,8 +387,8 @@
         subtitle: "La cuisine entre dans l’univers LEGO",
         image: "images/1979-first-chef.jpg",
         tags: ["Town", "Accessory", "First", "Fun"],
-        fr: "Le chapeau de chef est un bel exemple d’accessoire marquant apparu dans les premières années de la minifigurine. Il montre comment LEGO enrichissait déjà les métiers et les identités visuelles de ses personnages.",
-        en: "The chef’s hat is a great example of a memorable accessory introduced in the early years of the minifigure. It shows how LEGO was already expanding professions and visual identities for its characters.",
+        fr: "Le chapeau de chef montre comment LEGO enrichissait déjà les métiers de ses personnages.",
+        en: "The chef’s hat shows how LEGO was already expanding professions for its characters.",
         facts: [
           "Premier chapeau de chef LEGO / First LEGO chef’s hat"
         ]
@@ -388,8 +400,8 @@
         subtitle: "Un petit accessoire, un grand style",
         image: "images/1980-top-hat.jpg",
         tags: ["Accessory", "First", "Town"],
-        fr: "Le haut-de-forme de 1980 est une petite pièce, mais il ajoute immédiatement du style et de l’élégance à une minifigurine. C’est le genre de détail qui montre à quel point LEGO développait déjà une bibliothèque d’accessoires riche et mémorable.",
-        en: "The 1980 top hat is a small piece, but it instantly gives a minifigure elegance and style. It is the kind of detail that shows how LEGO was already building a rich and memorable library of accessories.",
+        fr: "Le haut-de-forme de 1980 est une petite pièce, mais il ajoute immédiatement du style.",
+        en: "The 1980 top hat is a small piece, but it instantly adds style.",
         facts: [
           "Premier haut-de-forme LEGO / First LEGO top hat"
         ]
@@ -401,8 +413,8 @@
         subtitle: "Les services d’urgence prennent vie",
         image: "images/1981-medic.jpg",
         tags: ["Town", "Medical", "Service"],
-        fr: "La figurine du médecin ou du secouriste illustre bien l’expansion du monde LEGO Town. Les personnages ne sont plus seulement génériques : ils représentent désormais des rôles professionnels précis dans une ville en pleine construction.",
-        en: "The medic figure nicely illustrates the expansion of the LEGO Town world. Characters are no longer just generic people: they now represent specific professional roles within a growing city.",
+        fr: "La figurine du médecin illustre bien l’expansion du monde LEGO Town.",
+        en: "The medic figure nicely illustrates the expansion of the LEGO Town world.",
         facts: []
       },
       {
@@ -412,8 +424,8 @@
         subtitle: "Le médiéval classique prend forme",
         image: "images/1984-black-falcon.jpg",
         tags: ["Castle", "Knight", "Iconic"],
-        fr: "Le chevalier Black Falcon est l’un des personnages les plus marquants de l’ère Castle. Avec son bouclier et son blason reconnaissable, il aide à définir l’esthétique médiévale classique de LEGO.",
-        en: "The Black Falcon knight is one of the most memorable characters of the Castle era. With his shield and recognizable crest, he helped define the classic medieval LEGO look.",
+        fr: "Le chevalier Black Falcon est l’un des personnages les plus marquants de l’ère Castle.",
+        en: "The Black Falcon knight is one of the most memorable characters of the Castle era.",
         facts: []
       },
       {
@@ -423,8 +435,8 @@
         subtitle: "Le thème Pirates change tout",
         image: "images/1989-pirate.jpg",
         tags: ["Pirates", "First", "Iconic"],
-        fr: "L’arrivée des Pirates en 1989 marque une grande évolution dans l’histoire LEGO. Les personnages deviennent plus expressifs, plus aventuriers et plus théâtraux. Le pirate avec crochet ou jambe de bois est devenu instantanément légendaire.",
-        en: "The arrival of Pirates in 1989 marks a major evolution in LEGO history. Characters become more expressive, more adventurous, and more theatrical. The pirate with hook or peg leg instantly became legendary.",
+        fr: "L’arrivée des Pirates en 1989 marque une grande évolution dans l’histoire LEGO.",
+        en: "The arrival of Pirates in 1989 marks a major evolution in LEGO history.",
         facts: [
           "Premières expressions faciales variées / First varied facial expressions"
         ]
@@ -436,8 +448,8 @@
         subtitle: "Une créature LEGO pleine d’ingéniosité",
         image: "images/1989-monkey.jpg",
         tags: ["Animal", "Fun", "Design"],
-        fr: "Le singe à queue bouclée est un excellent exemple de créativité LEGO. Son design est particulièrement amusant, car certaines parties rappellent fortement l’univers des minifigurines et montrent comment LEGO réutilisait intelligemment ses formes.",
-        en: "The curly-tail monkey is a great example of LEGO creativity. Its design is especially fun because some parts strongly echo the minifigure world, showing how LEGO cleverly reused familiar shapes.",
+        fr: "Le singe à queue bouclée est un excellent exemple de créativité LEGO.",
+        en: "The curly-tail monkey is a great example of LEGO creativity.",
         facts: []
       },
       {
@@ -447,8 +459,8 @@
         subtitle: "Le monde Pirates s’élargit",
         image: "images/1991-female-pirate.jpg",
         tags: ["Pirates", "Character", "Fun"],
-        fr: "La pirate féminine montre que LEGO enrichissait déjà ses thèmes avec des personnages plus variés. Dans une exposition, elle aide à illustrer l’évolution du casting et des rôles dans les univers LEGO.",
-        en: "The female pirate shows that LEGO was already enriching its themes with more varied characters. In an exhibition, it helps illustrate the evolution of casting and roles across LEGO worlds.",
+        fr: "La pirate féminine montre que LEGO enrichissait déjà ses thèmes avec des personnages plus variés.",
+        en: "The female pirate shows that LEGO was already enriching its themes with more varied characters.",
         facts: []
       },
       {
@@ -458,8 +470,8 @@
         subtitle: "Un personnage plus dramatique et plus sombre",
         image: "images/1992-black-bandit.jpg",
         tags: ["Castle", "Character", "Dark"],
-        fr: "Cette figurine de bandit au style plus sombre reflète une époque où LEGO explore des personnages plus marqués, plus théâtraux et plus facilement reconnaissables en un seul coup d’œil.",
-        en: "This darker-style bandit figure reflects a period when LEGO explored more distinctive, more theatrical, and more instantly recognizable characters.",
+        fr: "Cette figurine de bandit reflète une époque où LEGO explore des personnages plus marqués.",
+        en: "This bandit figure reflects a period when LEGO explored more distinctive characters.",
         facts: []
       },
       {
@@ -469,8 +481,8 @@
         subtitle: "Première figurine avec un nez",
         image: "images/1996-timmy.jpg",
         tags: ["First", "Rare"],
-        fr: "Timmy est célèbre comme première minifigurine LEGO avec un nez. C’est une figurine très appréciée dans une exposition parce qu’elle montre une rupture évidente avec le style classique du visage LEGO.",
-        en: "Timmy is famous as the first LEGO minifigure with a nose. It is a very popular exhibition piece because it shows a clear break from the classic LEGO face style.",
+        fr: "Timmy est célèbre comme première minifigurine LEGO avec un nez.",
+        en: "Timmy is famous as the first LEGO minifigure with a nose.",
         facts: [
           "Première minifigurine avec un nez / First LEGO minifigure with a nose"
         ]
@@ -482,8 +494,8 @@
         subtitle: "Un personnage historique de l’ère Western",
         image: "images/1997-indian-chief.jpg",
         tags: ["Western", "History", "Character"],
-        fr: "Ce personnage fait partie de l’ère Western et montre comment LEGO explorait des archétypes historiques et cinématographiques. Dans une exposition moderne, il peut aussi servir à parler de l’évolution des représentations culturelles au fil du temps.",
-        en: "This character belongs to the Western era and shows how LEGO explored historical and cinematic archetypes. In a modern exhibition, it can also help discuss how cultural representation evolves over time.",
+        fr: "Ce personnage fait partie de l’ère Western et montre comment LEGO explorait des archétypes historiques.",
+        en: "This character belongs to the Western era and shows how LEGO explored historical archetypes.",
         facts: []
       },
       {
@@ -493,8 +505,8 @@
         subtitle: "L’aventure archéologique avant l’explosion des licences",
         image: "images/1998-pharaoh-hotep.jpg",
         tags: ["Adventure", "Egypt", "Fun"],
-        fr: "Le pharaon Hotep représente bien l’esprit aventure LEGO de la fin des années 1990. Il apporte un look plus exotique, des accessoires distinctifs et une ambiance de chasse aux trésors très forte.",
-        en: "Pharaoh Hotep perfectly captures the LEGO adventure spirit of the late 1990s. It brings a more exotic look, distinctive accessories, and a strong treasure-hunting atmosphere.",
+        fr: "Le pharaon Hotep représente bien l’esprit aventure LEGO de la fin des années 1990.",
+        en: "Pharaoh Hotep perfectly captures the LEGO adventure spirit of the late 1990s.",
         facts: []
       },
       {
@@ -504,8 +516,8 @@
         subtitle: "Le début d’une révolution sous licence",
         image: "images/1999-star-wars.jpg",
         tags: ["Star Wars", "License", "First", "Iconic"],
-        fr: "L’arrivée de LEGO Star Wars en 1999 change profondément l’histoire de la marque. Les grandes licences deviennent soudain un pilier du monde LEGO, et les figurines inspirées du cinéma prennent une nouvelle importance.",
-        en: "The arrival of LEGO Star Wars in 1999 deeply changes the history of the brand. Major licenses suddenly become a pillar of the LEGO world, and movie-inspired minifigures gain a whole new importance.",
+        fr: "L’arrivée de LEGO Star Wars en 1999 change profondément l’histoire de la marque.",
+        en: "The arrival of LEGO Star Wars in 1999 deeply changes the history of the brand.",
         facts: [
           "Première grande licence LEGO / First major LEGO license"
         ]
@@ -517,8 +529,8 @@
         subtitle: "Les héros de film deviennent des minifigurines",
         image: "images/2000-han-solo.jpg",
         tags: ["Star Wars", "Movie", "License"],
-        fr: "Han Solo illustre parfaitement la nouvelle direction de LEGO au tournant des années 2000 : transformer des personnages mythiques du cinéma en minifigurines de collection et de jeu.",
-        en: "Han Solo perfectly illustrates LEGO’s new direction at the turn of the 2000s: transforming legendary movie characters into collectible and playable minifigures.",
+        fr: "Han Solo illustre parfaitement la nouvelle direction de LEGO au tournant des années 2000.",
+        en: "Han Solo perfectly illustrates LEGO’s new direction at the turn of the 2000s.",
         facts: []
       },
       {
@@ -528,8 +540,8 @@
         subtitle: "La magie entre officiellement chez LEGO",
         image: "images/2001-harry-potter.jpg",
         tags: ["Harry Potter", "License", "Magic", "First"],
-        fr: "L’arrivée d’Harry Potter ouvre la porte à un univers magique immédiatement populaire. Pour une exposition, cette année est importante, car elle marque l’entrée d’une autre licence mondiale devenue incontournable chez LEGO.",
-        en: "The arrival of Harry Potter opens the door to an instantly popular magical universe. For an exhibition, this year matters because it marks the arrival of another global license that became essential for LEGO.",
+        fr: "L’arrivée d’Harry Potter ouvre la porte à un univers magique immédiatement populaire.",
+        en: "The arrival of Harry Potter opens the door to an instantly popular magical universe.",
         facts: []
       },
       {
@@ -539,8 +551,8 @@
         subtitle: "Les super-héros LEGO commencent à prendre leur place",
         image: "images/2002-spiderman.jpg",
         tags: ["Super Heroes", "Marvel", "License", "First"],
-        fr: "Spider-Man représente une étape importante vers l’univers des super-héros LEGO. Cette arrivée prépare le terrain pour tout ce qui viendra plus tard avec Marvel et DC.",
-        en: "Spider-Man represents an important step toward the LEGO superhero universe. This arrival sets the stage for everything that would later come with Marvel and DC.",
+        fr: "Spider-Man représente une étape importante vers l’univers des super-héros LEGO.",
+        en: "Spider-Man represents an important step toward the LEGO superhero universe.",
         facts: []
       },
       {
@@ -550,8 +562,8 @@
         subtitle: "LEGO expérimente de nouvelles formes",
         image: "images/2003-nba.jpg",
         tags: ["Sports", "NBA", "Experiment", "Fun"],
-        fr: "Les figurines NBA sont fascinantes parce qu’elles montrent à quel point LEGO pouvait expérimenter. Le design s’éloigne du standard classique et tente quelque chose de beaucoup plus sportif et dynamique.",
-        en: "NBA figures are fascinating because they show how far LEGO could experiment. Their design moves away from the classic standard and tries something much more athletic and dynamic.",
+        fr: "Les figurines NBA montrent à quel point LEGO pouvait expérimenter.",
+        en: "NBA figures show how far LEGO could experiment.",
         facts: []
       },
       {
@@ -561,8 +573,8 @@
         subtitle: "Une autre grande licence change l’exposition",
         image: "images/2006-batman.jpg",
         tags: ["Batman", "DC", "License", "Iconic"],
-        fr: "Batman est l’une des figures les plus fortes de l’ère moderne LEGO. Son arrivée renforce l’idée que les grandes licences populaires sont désormais au cœur de l’expérience LEGO.",
-        en: "Batman is one of the strongest figures of the modern LEGO era. His arrival reinforces the idea that major popular licenses are now central to the LEGO experience.",
+        fr: "Batman est l’une des figures les plus fortes de l’ère moderne LEGO.",
+        en: "Batman is one of the strongest figures of the modern LEGO era.",
         facts: []
       },
       {
@@ -572,8 +584,8 @@
         subtitle: "L’aventure cinéma rejoint LEGO",
         image: "images/2008-indiana-jones.jpg",
         tags: ["Indiana Jones", "Adventure", "Movie", "License"],
-        fr: "Indiana Jones apporte à LEGO une autre grande aventure cinématographique. C’est une figurine parfaite pour relier l’univers LEGO à l’imaginaire des fouilles, des temples et des explorations exotiques.",
-        en: "Indiana Jones brings another major cinematic adventure to LEGO. It is a perfect figure for connecting LEGO with the world of archaeology, temples, and exotic exploration.",
+        fr: "Indiana Jones apporte à LEGO une autre grande aventure cinématographique.",
+        en: "Indiana Jones brings another major cinematic adventure to LEGO.",
         facts: []
       },
       {
@@ -583,8 +595,8 @@
         subtitle: "La télévision animée entre dans la collection",
         image: "images/2009-spongebob.jpg",
         tags: ["TV", "Cartoon", "License", "Fun"],
-        fr: "Bob l’éponge montre que LEGO ne se limite plus au cinéma ou aux univers classiques. Les personnages de télévision et de dessins animés prennent aussi leur place dans le monde des minifigurines.",
-        en: "SpongeBob shows that LEGO is no longer limited to movies or classic in-house worlds. TV and cartoon characters also take their place in the minifigure universe.",
+        fr: "Bob l’éponge montre que LEGO ne se limite plus au cinéma ou aux univers classiques.",
+        en: "SpongeBob shows that LEGO is no longer limited to movies or classic in-house worlds.",
         facts: []
       },
       {
@@ -594,8 +606,8 @@
         subtitle: "Les personnages spécialisés deviennent plus nombreux",
         image: "images/2010-aayla-secura.jpg",
         tags: ["Star Wars", "Sci-Fi", "Character", "Detailed"],
-        fr: "Aayla Secura représente bien l’ère où LEGO produit de plus en plus de personnages spécifiques, secondaires ou très appréciés des fans. Le niveau de détail et la variété augmentent fortement.",
-        en: "Aayla Secura nicely represents the era when LEGO began producing more and more specific, secondary, or fan-favorite characters. Detail and variety increased dramatically.",
+        fr: "Aayla Secura représente bien l’ère où LEGO produit de plus en plus de personnages spécifiques.",
+        en: "Aayla Secura nicely represents the era when LEGO began producing more and more specific characters.",
         facts: []
       },
       {
@@ -605,8 +617,8 @@
         subtitle: "Ninjago devient un pilier moderne",
         image: "images/2011-sensei-wu.jpg",
         tags: ["Ninjago", "Original Theme", "Modern Classic"],
-        fr: "Sensei Wu représente l’un des grands succès modernes de LEGO avec Ninjago. C’est un bon rappel que LEGO ne vit pas seulement de ses licences : la marque sait aussi créer ses propres héros iconiques.",
-        en: "Sensei Wu represents one of LEGO’s great modern successes with Ninjago. It is a good reminder that LEGO does not live only through licenses: the brand still creates its own iconic heroes.",
+        fr: "Sensei Wu représente l’un des grands succès modernes de LEGO avec Ninjago.",
+        en: "Sensei Wu represents one of LEGO’s great modern successes with Ninjago.",
         facts: []
       },
       {
@@ -616,8 +628,8 @@
         subtitle: "Des silhouettes toujours plus originales",
         image: "images/2012-clockwork-robot.jpg",
         tags: ["Robot", "Sci-Fi", "Fun", "Design"],
-        fr: "Le robot mécanique montre à quel point LEGO pousse plus loin les formes, les impressions et les accessoires. Les figurines deviennent de plus en plus inventives, parfois presque hybrides entre minifigurine et créature.",
-        en: "The clockwork robot shows how LEGO pushes shapes, prints, and accessories further. Figures become more inventive, sometimes almost hybrid between a minifigure and a creature.",
+        fr: "Le robot mécanique montre à quel point LEGO pousse plus loin les formes et les accessoires.",
+        en: "The clockwork robot shows how LEGO pushes shapes and accessories further.",
         facts: []
       },
       {
@@ -627,8 +639,8 @@
         subtitle: "Les Tortues Ninja débarquent chez LEGO",
         image: "images/2013-donatello.jpg",
         tags: ["TMNT", "TV", "License", "Iconic"],
-        fr: "Donatello marque l’arrivée des Tortues Ninja chez LEGO. Cette gamme mélange nostalgie, culture populaire et design distinctif grâce aux têtes moulées très reconnaissables.",
-        en: "Donatello marks the arrival of the Teenage Mutant Ninja Turtles in LEGO form. This line blends nostalgia, pop culture, and distinctive design through highly recognizable molded heads.",
+        fr: "Donatello marque l’arrivée des Tortues Ninja chez LEGO.",
+        en: "Donatello marks the arrival of the Teenage Mutant Ninja Turtles in LEGO form.",
         facts: []
       },
       {
@@ -638,8 +650,8 @@
         subtitle: "Le jeu vidéo entre officiellement chez LEGO",
         image: "images/2014-minecraft-steve.jpg",
         tags: ["Minecraft", "Video Game", "License", "Modern"],
-        fr: "Steve de Minecraft montre que LEGO suit aussi l’évolution de la culture populaire numérique. Avec son style cubique très particulier, il est parfait pour montrer la rencontre entre deux univers de construction.",
-        en: "Minecraft Steve shows that LEGO also follows the evolution of digital popular culture. With his very distinctive blocky style, he is perfect for showing the meeting of two building worlds.",
+        fr: "Steve de Minecraft montre que LEGO suit aussi l’évolution de la culture populaire numérique.",
+        en: "Minecraft Steve shows that LEGO also follows the evolution of digital popular culture.",
         facts: []
       },
       {
@@ -649,8 +661,8 @@
         subtitle: "Une licence rétro pleine de personnalité",
         image: "images/2015-scooby-doo.jpg",
         tags: ["Scooby-Doo", "TV", "Fun", "License"],
-        fr: "Scooby-Doo apporte une énergie ludique et nostalgique à la collection. C’est le type de personnage qui fait sourire immédiatement et qui montre que LEGO sait aussi jouer avec la culture populaire rétro.",
-        en: "Scooby-Doo brings playful and nostalgic energy to the collection. It is the kind of character that instantly makes people smile and shows that LEGO also plays with retro pop culture.",
+        fr: "Scooby-Doo apporte une énergie ludique et nostalgique à la collection.",
+        en: "Scooby-Doo brings playful and nostalgic energy to the collection.",
         facts: []
       },
       {
@@ -660,8 +672,8 @@
         subtitle: "Le cinéma culte trouve sa place",
         image: "images/2016-beetlejuice.jpg",
         tags: ["Movie", "Fun", "Cult", "License"],
-        fr: "Beetlejuice représente bien l’élargissement de LEGO vers des références plus décalées, plus cultes et parfois plus inattendues. C’est une figurine très amusante dans une exposition.",
-        en: "Beetlejuice nicely represents LEGO’s expansion toward more offbeat, cult, and sometimes unexpected references. It is a very fun exhibition figure.",
+        fr: "Beetlejuice représente bien l’élargissement de LEGO vers des références plus cultes et inattendues.",
+        en: "Beetlejuice nicely represents LEGO’s expansion toward more cult and unexpected references.",
         facts: []
       },
       {
@@ -671,8 +683,8 @@
         subtitle: "Une autre icône du jeu vidéo",
         image: "images/2017-sonic.jpg",
         tags: ["Sonic", "Video Game", "Fun", "License"],
-        fr: "Sonic est une figure parfaite pour illustrer la rencontre entre LEGO et le jeu vidéo culte. Son look bleu ultra reconnaissable attire immédiatement l’œil dans une vitrine.",
-        en: "Sonic is a perfect figure for illustrating the meeting between LEGO and iconic video games. His ultra-recognizable blue look immediately catches the eye in a display.",
+        fr: "Sonic est une figure parfaite pour illustrer la rencontre entre LEGO et le jeu vidéo culte.",
+        en: "Sonic is a perfect figure for illustrating the meeting between LEGO and iconic video games.",
         facts: []
       },
       {
@@ -682,8 +694,8 @@
         subtitle: "Le monde magique revient en force",
         image: "images/2018-harry-potter-return.jpg",
         tags: ["Harry Potter", "Magic", "License", "Return"],
-        fr: "Le retour d’Harry Potter dans l’ère moderne LEGO montre la longévité exceptionnelle de certaines licences. C’est aussi une belle manière de relier les débuts des années 2000 à une nouvelle génération de collectionneurs.",
-        en: "Harry Potter’s return in the modern LEGO era shows the exceptional longevity of certain licenses. It is also a great way to connect the early 2000s with a new generation of collectors.",
+        fr: "Le retour d’Harry Potter montre la longévité exceptionnelle de certaines licences.",
+        en: "Harry Potter’s return shows the exceptional longevity of certain licenses.",
         facts: []
       },
       {
@@ -693,8 +705,8 @@
         subtitle: "Une nouvelle ère Star Wars",
         image: "images/2019-mandalorian.jpg",
         tags: ["Star Wars", "License", "Modern", "Iconic"],
-        fr: "Le Mandalorian marque une nouvelle génération de Star Wars chez LEGO. Son armure très reconnaissable en fait une pièce forte dans une vitrine moderne.",
-        en: "The Mandalorian marks a new generation of Star Wars in LEGO. Its iconic armor makes it a strong piece in a modern display.",
+        fr: "Le Mandalorian marque une nouvelle génération de Star Wars chez LEGO.",
+        en: "The Mandalorian marks a new generation of Star Wars in LEGO.",
         facts: []
       },
       {
@@ -704,8 +716,8 @@
         subtitle: "Un phénomène mondial",
         image: "images/2020-baby-yoda.jpg",
         tags: ["Star Wars", "Cute", "Iconic", "Modern"],
-        fr: "Grogu est devenu l’un des personnages les plus adorés de l’ère récente. Dans une exposition, il attire immédiatement autant les enfants que les adultes.",
-        en: "Grogu became one of the most beloved characters of the recent era. In an exhibition, it immediately attracts both children and adults.",
+        fr: "Grogu est devenu l’un des personnages les plus adorés de l’ère récente.",
+        en: "Grogu became one of the most beloved characters of the recent era.",
         facts: []
       },
       {
@@ -715,8 +727,8 @@
         subtitle: "Toujours au sommet",
         image: "images/2021-spider-man.jpg",
         tags: ["Marvel", "Super Heroes", "License", "Iconic"],
-        fr: "Spider-Man reste l’un des héros les plus populaires de LEGO. Il représente parfaitement la force durable de l’univers super-héros dans les collections modernes.",
-        en: "Spider-Man remains one of LEGO’s most popular heroes. It perfectly represents the lasting strength of the superhero universe in modern collections.",
+        fr: "Spider-Man reste l’un des héros les plus populaires de LEGO.",
+        en: "Spider-Man remains one of LEGO’s most popular heroes.",
         facts: []
       },
       {
@@ -726,8 +738,8 @@
         subtitle: "Le dieu du tonnerre",
         image: "images/2022-thor.jpg",
         tags: ["Marvel", "Avengers", "License", "Iconic"],
-        fr: "Thor apporte puissance, silhouette forte et culture héroïque moderne à la collection. C’est une figurine très efficace visuellement dans une exposition.",
-        en: "Thor brings power, strong silhouette, and modern heroic culture to the collection. It is a very effective visual figure in an exhibition.",
+        fr: "Thor apporte puissance, silhouette forte et culture héroïque moderne à la collection.",
+        en: "Thor brings power, strong silhouette, and modern heroic culture to the collection.",
         facts: []
       },
       {
@@ -737,8 +749,8 @@
         subtitle: "Retour du héros bleu",
         image: "images/2023-sonic.jpg",
         tags: ["Sonic", "Video Game", "License", "Modern"],
-        fr: "Le retour de Sonic montre que certaines icônes du jeu vidéo continuent de traverser les générations et restent très fortes dans l’univers LEGO.",
-        en: "Sonic’s return shows that some video game icons continue to span generations and remain very strong in the LEGO universe.",
+        fr: "Le retour de Sonic montre que certaines icônes du jeu vidéo continuent de traverser les générations.",
+        en: "Sonic’s return shows that some video game icons continue to span generations.",
         facts: []
       },
       {
@@ -748,8 +760,8 @@
         subtitle: "Un duo incontournable",
         image: "images/2023-mando-grogu.jpg",
         tags: ["Star Wars", "Duo", "License", "Iconic"],
-        fr: "Le duo Mandalorian et Grogu est devenu incontournable dans les collections récentes. Ensemble, ils racontent immédiatement une histoire forte et moderne.",
-        en: "The Mandalorian and Grogu duo became essential in recent collections. Together, they immediately tell a strong and modern story.",
+        fr: "Le duo Mandalorian et Grogu est devenu incontournable dans les collections récentes.",
+        en: "The Mandalorian and Grogu duo became essential in recent collections.",
         facts: []
       },
       {
@@ -759,8 +771,8 @@
         subtitle: "Toujours dominant",
         image: "images/2024-minecraft.jpg",
         tags: ["Minecraft", "Video Game", "Modern", "Iconic"],
-        fr: "Minecraft reste l’un des univers les plus forts chez LEGO. Il montre à quel point le jeu vidéo et la construction sont devenus liés dans la culture populaire moderne.",
-        en: "Minecraft remains one of LEGO’s strongest universes. It shows how deeply gaming and building have become linked in modern popular culture.",
+        fr: "Minecraft reste l’un des univers les plus forts chez LEGO.",
+        en: "Minecraft remains one of LEGO’s strongest universes.",
         facts: []
       },
       {
@@ -770,8 +782,8 @@
         subtitle: "Une collection toujours forte",
         image: "images/2024-marvel.jpg",
         tags: ["Marvel", "Super Heroes", "License", "Modern"],
-        fr: "Les super-héros Marvel dominent toujours les collections LEGO modernes. Ils représentent l’une des grandes forces actuelles du monde des minifigurines.",
-        en: "Marvel superheroes still dominate modern LEGO collections. They represent one of the major current strengths of the minifigure world.",
+        fr: "Les super-héros Marvel dominent toujours les collections LEGO modernes.",
+        en: "Marvel superheroes still dominate modern LEGO collections.",
         facts: []
       },
       {
@@ -781,8 +793,8 @@
         subtitle: "L’évolution continue",
         image: "images/2025-modern.jpg",
         tags: ["Modern", "Evolution", "Future", "Design"],
-        fr: "Les minifigurines LEGO continuent d’évoluer avec plus de détails, plus de diversité et plus de personnalité. Cette entrée permet de conclure la chronologie sur une vision ouverte vers le futur.",
-        en: "LEGO minifigures continue to evolve with more detail, more diversity, and more personality. This entry helps conclude the timeline with an open view toward the future.",
+        fr: "Les minifigurines LEGO continuent d’évoluer avec plus de détails et de diversité.",
+        en: "LEGO minifigures continue to evolve with more detail and diversity.",
         facts: []
       }
     ];
@@ -812,6 +824,7 @@
           ${sortedFigures.map((figure, index) => `
             <a class="figure-link" href="?fig=${figure.slug}">
               <div class="figure-number">${index + 1}</div>
+              <img class="figure-thumb" src="${figure.image}" alt="${figure.title}" onerror="this.src='images/default.jpg'">
               <div class="figure-text">
                 <strong>${figure.title}</strong>
                 <span>${figure.year} — ${figure.subtitle}</span>
