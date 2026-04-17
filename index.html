@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,7 +17,7 @@
       --line: #ddd4c8;
       --shadow: 0 8px 18px rgba(0,0,0,0.08);
       --radius: 16px;
-      --max: 1400px;
+      --max: 1200px;
     }
 
     * {
@@ -63,119 +64,92 @@
       font-size: 16px;
     }
 
-    .topbar {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 18px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .search,
-    .filter {
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: white;
-      font-size: 15px;
-      min-width: 220px;
-    }
-
     .layout {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 10px 20px 50px;
+      padding: 24px 20px 50px;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      overflow: hidden;
+    .homepage-list {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
       box-shadow: var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
       border: 1px solid #efe7dc;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+      padding: 24px;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    .homepage-list h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 28px;
+      text-align: center;
+      color: var(--accent-dark);
     }
 
-    .card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      background: #ececec;
-      display: block;
+    .homepage-list p {
+      text-align: center;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 24px;
     }
 
-    .card-content {
-      padding: 16px;
-      text-align: left;
+    .figure-list {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      flex: 1;
     }
 
-    .year-badge {
-      display: inline-block;
+    .figure-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid #e8ded2;
+      background: #fcfaf7;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .figure-link:hover {
+      background: #f5eee6;
+      transform: translateX(4px);
+    }
+
+    .figure-number {
+      min-width: 36px;
+      height: 36px;
+      border-radius: 999px;
       background: var(--accent);
       color: white;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
-      width: fit-content;
-      letter-spacing: 0.5px;
-    }
-
-    .card h2 {
-      font-size: 20px;
-      margin: 0;
-      line-height: 1.3;
-    }
-
-    .card p {
-      margin: 0;
-      color: #555;
-      line-height: 1.5;
       font-size: 14px;
     }
 
-    .tags {
+    .figure-text {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-      padding-top: 4px;
+      flex-direction: column;
+      gap: 2px;
     }
 
-    .tag {
-      background: #f3ede4;
-      border: 1px solid #e5dacb;
-      color: #5e5141;
-      font-size: 12px;
-      padding: 5px 9px;
-      border-radius: 999px;
+    .figure-text strong {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .figure-text span {
+      font-size: 13px;
+      color: #666;
     }
 
     .detail {
       display: none;
       max-width: 1100px;
-      margin: 20px auto 50px;
+      margin: 0 auto;
       background: white;
       border-radius: 22px;
       overflow: hidden;
@@ -241,11 +215,20 @@
       line-height: 1.7;
     }
 
-    .detail .meta {
+    .meta {
       margin-top: 16px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+    }
+
+    .tag {
+      background: #f3ede4;
+      border: 1px solid #e5dacb;
+      color: #5e5141;
+      font-size: 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
     }
 
     .back-link {
@@ -290,6 +273,10 @@
       .detail h1 {
         font-size: 28px;
       }
+
+      .homepage-list {
+        padding: 18px;
+      }
     }
   </style>
 </head>
@@ -301,31 +288,23 @@
         🧱 LEGO Minifigure Museum
       </h1>
       <p class="subtitle">
-        🇫🇷 Bienvenue dans l’exposition LEGO de Sébastien et Alice. Découvrez les premières apparitions, les nouveautés marquantes et les figurines les plus spéciales de la collection.<br><br>
-        🇬🇧 Welcome to Sébastien and Alice’s LEGO exhibition. Discover first appearances, major innovations, and the most special figures in the collection.
+        🇫🇷 Bienvenue dans l’exposition LEGO de Sébastien et Alice. Cliquez sur une figurine pour découvrir son histoire, son importance et ses particularités.<br><br>
+        🇬🇧 Welcome to Sébastien and Alice’s LEGO exhibition. Click on a figure to discover its story, importance, and unique details.
       </p>
     </div>
   </header>
 
-  <div class="topbar" id="topbar">
-    <input id="searchInput" class="search" type="text" placeholder="Rechercher / Search..." />
-    <select id="yearFilter" class="filter">
-      <option value="all">Toutes les années / All years</option>
-    </select>
-    <select id="tagFilter" class="filter">
-      <option value="all">Tous les thèmes / All themes</option>
-    </select>
-  </div>
-
   <main class="layout">
-    <section id="gallery" class="gallery"></section>
+    <section id="homepageList" class="homepage-list"></section>
 
     <section id="detailView" class="detail">
       <div class="detail-image">
         <img id="detailImage" src="" alt="" />
       </div>
+
       <div class="detail-content">
-        <div class="back-link" onclick="goHome()">← Retour à la galerie / Back to gallery</div>
+        <div class="back-link" onclick="goHome()">← Retour à la liste / Back to list</div>
+
         <div id="detailYear" class="detail-year"></div>
         <h1 id="detailTitle"></h1>
         <p id="detailSubtitle" style="font-size:16px; color:#555; margin-bottom:18px;"></p>
@@ -336,13 +315,13 @@
         <h3>🇬🇧 English</h3>
         <p id="detailEn"></p>
 
-        <h3>✨ Faits intéressants / Fun facts</h3>
+        <h3 id="factsTitle">✨ Faits intéressants / Fun facts</h3>
         <ul id="detailFacts"></ul>
 
         <div id="detailMeta" class="meta"></div>
 
         <p class="small-note">
-          Cette base pourra être agrandie plus tard avec plus de figurines, de photos, des codes BrickLink, de la rareté et d’autres anecdotes.
+          Cette base pourra être agrandie plus tard avec plus de figurines, plus de photos, les codes BrickLink, la rareté et d’autres anecdotes.
         </p>
       </div>
     </section>
@@ -353,2439 +332,462 @@
   </footer>
 
   <script>
-   const figures = [
-  /* =========================
-     1970s – ORIGINES
-  ========================= */
-
-  {
-    slug: "1974-family-figures",
-    year: 1974,
-    title: "LEGO Family Figures",
-    subtitle: "Les débuts des figurines LEGO",
-    image: "images/1974-family-figures.jpg",
-    tags: ["Early LEGO", "First", "History"],
-    fr: "Une des premières figurines LEGO avec bras mobiles et corps en briques.",
-    en: "One of the first LEGO figures with movable arms and a brick-built body.",
-    facts: [
-      "Avant la minifigurine / Before minifigure",
-      "Visage peint / Painted face",
-      "Très différent d’aujourd’hui / Very different from today"
-    ]
-  },
-  {
-  slug: "1974-homemaker-girl",
-  year: 1974,
-  title: "Homemaker Girl",
-  subtitle: "LEGO Homemaker",
-  tags: ["Vintage", "Homemaker"],
-  fr: "Figurine féminine de la gamme Homemaker.",
-  en: "Female figure from the Homemaker line.",
-  facts: [
-    "Avant les minifigurines",
-    "Format plus grand que LEGO classique",
-    "Ancêtre des personnages LEGO"
-  ]
-}
-  {
-  slug: "1975-first-female-figure",
-  year: 1975,
-  title: "First Female Figure",
-  subtitle: "Première femme LEGO",
-  image: "images/1975-first-female-figure.jpg",
-  tags: ["First", "Female", "Early LEGO", "History"],
-  fr: "Une des premières figurines féminines LEGO, avec robe simple et cheveux noirs.",
-  en: "One of the first female LEGO figures, with a simple dress and black hair.",
-  facts: [
-    "Première femme LEGO / First female LEGO figure",
-    "Style très simple / Very simple style",
-    "Très importante pour l’histoire LEGO / Very important in LEGO history"
-  ]
-},
-{
-  slug: "1975-first-white-hair",
-  year: 1975,
-  title: "First White Hair",
-  subtitle: "Premiers cheveux blancs",
-  image: "images/1975-first-white-hair.jpg",
-  tags: ["First", "Hair", "Early LEGO", "History"],
-  fr: "Première apparition de cheveux blancs sur une figurine LEGO.",
-  en: "First appearance of white hair on a LEGO figure.",
-  facts: [
-    "Premiers cheveux blancs / First white hair",
-    "Détail rare pour l’époque / Rare detail for the time",
-    "Très bon fun fact / Great fun fact"
-  ]
-},
-
-  {
-    slug: "1978-first-minifigure",
-    year: 1978,
-    title: "First LEGO Minifigure",
-    subtitle: "La naissance du classique",
-    image: "images/1978-first-minifigure.jpg",
-    tags: ["First", "Classic", "Iconic"],
-    fr: "Première minifigurine LEGO moderne avec bras et jambes articulés.",
-    en: "First modern LEGO minifigure with movable arms and legs.",
-    facts: [
-      "Début officiel / Official beginning",
-      "Sourire classique / Classic smile",
-      "Moment clé LEGO / Key LEGO moment"
-    ]
-  },
-{
-  slug: "1978-first-visor",
-  year: 1978,
-  title: "First Visor",
-  subtitle: "Première visière LEGO",
-  image: "images/1978-first-visor.jpg",
-  tags: ["First", "Castle", "Knight", "Accessory"],
-  fr: "Première apparition d’une visière de casque chez LEGO.",
-  en: "First appearance of a helmet visor in LEGO.",
-  facts: [
-    "Première visière / First visor",
-    "Important pour Castle / Important for Castle",
-    "Très belle pièce historique / Great historical piece"
-  ]
-},
-{
-  slug: "1979-first-male-hair",
-  year: 1979,
-  title: "First Male Hair",
-  subtitle: "Premiers cheveux d’homme",
-  image: "images/1979-first-male-hair.jpg",
-  tags: ["First", "Hair", "Town", "History"],
-  fr: "Première apparition d’une coiffure masculine chez LEGO.",
-  en: "First appearance of a male hairstyle in LEGO.",
-  facts: [
-    "Premiers cheveux homme / First male hair",
-    "Détail important / Important detail",
-    "Belle évolution du style LEGO / Nice evolution of LEGO style"
-  ]
-},
-  {
-    slug: "1979-yellow-spaceman",
-    year: 1979,
-    title: "Classic Spaceman",
-    subtitle: "Icône de l’espace LEGO",
-    image: "images/1979-yellow-spaceman.jpg",
-    tags: ["Space", "Iconic"],
-    fr: "Une des figurines les plus iconiques de l’histoire LEGO.",
-    en: "One of the most iconic figures in LEGO history.",
-    facts: [
-      "Très recherché / Highly collectible",
-      "Symbole LEGO / LEGO symbol",
-      "Très populaire / Very popular"
-    ]
-  },
-{
-  slug: "1979-fabuland-bear",
-  year: 1979,
-  title: "Fabuland Bear",
-  subtitle: "Fabuland",
-  tags: ["Fabuland"],
-  fr: "Personnage animalier de l’univers Fabuland.",
-  en: "Animal character from the Fabuland universe.",
-  facts: [
-    "Style unique",
-    "Avant les licences modernes",
-    "Très amusant en exposition"
-  ]
-}
-  /* =========================
-     1980s – EXPANSION
-  ========================= */
-{
-  slug: "1980-first-top-hat-special",
-  year: 1980,
-  title: "First Top Hat",
-  subtitle: "Premier haut-de-forme",
-  image: "images/1980-first-top-hat.jpg",
-  tags: ["First", "Accessory", "Town", "History"],
-  fr: "Première apparition du haut-de-forme chez LEGO.",
-  en: "First appearance of the LEGO top hat.",
-  facts: [
-    "Premier haut-de-forme / First top hat",
-    "Accessoire élégant / Elegant accessory",
-    "Très bon détail de musée / Great museum detail"
-  ]
-},
-{
-  slug: "1980-first-construction-worker",
-  year: 1980,
-  title: "First Construction Worker",
-  subtitle: "Première construction LEGO",
-  image: "images/1980-first-construction-worker.jpg",
-  tags: ["First", "Town", "Work", "History"],
-  fr: "Une des premières figurines LEGO liées au monde de la construction.",
-  en: "One of the first LEGO figures linked to the construction world.",
-  facts: [
-    "Premier ouvrier construction / First construction worker",
-    "Très bon thème de ville / Great city theme",
-    "Important pour Town / Important for Town"
-  ]
-},
-{
-  slug: "1980-bob",
-  year: 1980,
-  title: "Bob",
-  subtitle: "Personnage classique LEGO",
-  image: "images/1980-bob.jpg",
-  tags: ["Town", "Classic", "Character", "Fun"],
-  fr: "Un personnage LEGO simple et classique, parfait pour montrer le style de l’époque.",
-  en: "A simple classic LEGO character, perfect for showing the style of the era.",
-  facts: [
-    "Style très classique / Very classic style",
-    "Visage sourire simple / Simple smiling face",
-    "Bon repère visuel / Good visual marker"
-  ]
-},
-{
-  slug: "1981-duplo-figure",
-  year: 1981,
-  title: "LEGO Figure 4224c01",
-  subtitle: "Figurine ancienne LEGO",
-  tags: ["Vintage LEGO"],
-  fr: "Ancienne figurine LEGO au style simple et très reconnaissable.",
-  en: "Vintage LEGO figure with a simple and recognizable design.",
-  facts: [
-    "Très ancien modèle",
-    "Avant plusieurs standards modernes",
-    "Intéressant pour montrer l’évolution LEGO"
-  ]
-}
-
-  {
-    slug: "1984-black-falcon",
-    year: 1984,
-    title: "Black Falcon Knight",
-    subtitle: "Le classique médiéval",
-    image: "images/1984-black-falcon.jpg",
-    tags: ["Castle", "Knight", "Iconic"],
-    fr: "Un des chevaliers les plus connus du thème Castle.",
-    en: "One of the most famous knights from the Castle theme.",
-    facts: [
-      "Blason célèbre / Famous crest",
-      "Très aimé / Fan favorite",
-      "Grande époque Castle / Classic era"
-    ]
-  },
-{
-  slug: "1984-early-castle-character",
-  year: 1984,
-  title: "Early Castle Character",
-  subtitle: "Les débuts du médiéval LEGO",
-  image: "images/1984-early-castle-character.jpg",
-  tags: ["Castle", "Knight", "History", "Classic"],
-  fr: "Un personnage important des débuts du thème médiéval LEGO.",
-  en: "An important character from the early LEGO medieval theme.",
-  facts: [
-    "Début du monde Castle / Beginning of Castle world",
-    "Très bon style classique / Great classic style",
-    "Belle pièce d’exposition / Great display piece"
-  ]
-},
-  {
-    slug: "1989-pirate",
-    year: 1989,
-    title: "Classic Pirate",
-    subtitle: "Une révolution LEGO",
-    image: "images/1989-pirate.jpg",
-    tags: ["Pirates", "Iconic"],
-    fr: "Les pirates apportent plus de personnalité et d’accessoires.",
-    en: "Pirates bring more personality and accessories.",
-    facts: [
-      "Crochet / Hook",
-      "Jambe de bois / Peg leg",
-      "Expressions variées / More expressions"
-    ]
-  },
-{
-  slug: "1985-early-castle-knight",
-  year: 1985,
-  title: "Early Castle Knight",
-  subtitle: "Chevalier médiéval LEGO",
-  image: "images/1985-castle-knight.jpg",
-  tags: ["Castle", "Knight", "Armor", "Classic"],
-  fr: "Un des premiers chevaliers LEGO avec armure imprimée détaillée.",
-  en: "One of the early LEGO knights with detailed printed armor.",
-  facts: [
-    "Début du thème Castle / Early Castle theme",
-    "Armure imprimée / Printed armor",
-    "Très emblématique / Very iconic"
-  ]
-},{
-  slug: "1987-castle-soldier",
-  year: 1987,
-  title: "Castle Soldier",
-  subtitle: "Soldat médiéval",
-  image: "images/1987-castle-soldier.jpg",
-  tags: ["Castle", "Soldier", "Army"],
-  fr: "Un soldat LEGO du thème médiéval, représentant les armées du château.",
-  en: "A LEGO medieval soldier representing castle armies.",
-  facts: [
-    "Thème Castle / Castle theme",
-    "Époque médiévale / Medieval era",
-    "Très bon visuel / Great display figure"
-  ]
-},
-{
-  slug: "1987-classic-space-pilot",
-  year: 1987,
-  title: "Classic Space Pilot",
-  subtitle: "LEGO Space",
-  tags: ["Space", "Vintage"],
-  fr: "Pilote spatial classique vert.",
-  en: "Classic green space pilot.",
-  facts: [
-    "Très recherché",
-    "Thème iconique",
-    "Une des couleurs plus rares"
-  ]
-}
-{
-  slug: "1989-first-pirate-era",
-  year: 1989,
-  title: "Classic Pirate",
-  subtitle: "Pirate LEGO classique",
-  image: "images/1989-pirate.jpg",
-  tags: ["Pirates", "Iconic", "Adventure"],
-  fr: "Un pirate LEGO classique avec cache-œil et jambe en bois.",
-  en: "A classic LEGO pirate with eyepatch and wooden leg.",
-  facts: [
-    "Début Pirates / Beginning of Pirates theme",
-    "Personnage iconique / Iconic character",
-    "Très populaire / Very popular"
-  ]
-},
-{
-  slug: "1989-female-pirate",
-  year: 1989,
-  title: "Female Pirate",
-  subtitle: "Pirate femme",
-  image: "images/1989-female-pirate.jpg",
-  tags: ["Pirates", "Female", "Adventure"],
-  fr: "Une des premières femmes dans le thème Pirates LEGO.",
-  en: "One of the first female figures in the LEGO Pirates theme.",
-  facts: [
-    "Femme pirate / Female pirate",
-    "Thème Pirates / Pirates theme",
-    "Très intéressant / Very interesting"
-  ]
-},
-{
-  slug: "1989-futuron-space",
-  year: 1989,
-  title: "Futuron Space",
-  subtitle: "Exploration spatiale",
-  image: "images/1989-futuron.jpg",
-  tags: ["Space", "Futuron", "Classic Space"],
-  fr: "Figurine du thème Futuron, évolution du LEGO Space.",
-  en: "A Futuron theme figure, evolution of LEGO Space.",
-  facts: [
-    "Thème Futuron / Futuron theme",
-    "Évolution Space / Space evolution",
-    "Très collectionnable / Very collectible"
-  ]
-},
-
-  {
-    slug: "1989-ghost",
-    year: 1989,
-    title: "Ghost",
-    subtitle: "Une figurine culte",
-    image: "images/1989-ghost.jpg",
-    tags: ["Castle", "Fun", "Iconic"],
-    fr: "Un fantôme LEGO devenu culte.",
-    en: "A LEGO ghost that became iconic.",
-    facts: [
-      "Très reconnaissable / Recognizable",
-      "Design simple / Simple design",
-      "Très populaire / Very popular"
-    ]
-  },
-  {
-  slug: "1989-nasa-spaceman",
-  year: 1989,
-  title: "NASA Spaceman",
-  subtitle: "Astronaute NASA",
-  image: "images/1989-nasa.jpg",
-  tags: ["Space", "NASA", "Modern"],
-  fr: "Une version moderne d’astronaute inspirée du style NASA.",
-  en: "A modern astronaut inspired by NASA style.",
-  facts: [
-    "Logo NASA / NASA logo",
-    "Évolution du Space / Evolution of Space",
-    "Très visuel / Very visual"
-  ]
-},
-{
-  slug: "1989-arctic-figure",
-  year: 1989,
-  title: "Arctic Explorer",
-  subtitle: "Explorateur arctique",
-  image: "images/1989-arctic.jpg",
-  tags: ["Arctic", "Explorer", "Town"],
-  fr: "Une figurine représentant les environnements froids et l’exploration.",
-  en: "A figure representing cold environments and exploration.",
-  facts: [
-    "Thème exploration / Exploration theme",
-    "Vêtements spécialisés / Specialized outfit",
-    "Variété LEGO / LEGO diversity"
-  ]
-},
-
-  /* =========================
-     1990s – DIVERSITÉ
-  ========================= */
-
-  {
-    slug: "1990-imperial-soldier",
-    year: 1990,
-    title: "Imperial Soldier",
-    subtitle: "L’armée des pirates",
-    image: "images/1990-imperial-soldier.jpg",
-    tags: ["Pirates", "Army"],
-    fr: "Les soldats impériaux opposent les pirates.",
-    en: "Imperial soldiers oppose pirates.",
-    facts: [
-      "Uniforme classique / Classic uniform",
-      "Très visuel / Very visual",
-      "Bon contraste / Great contrast"
-    ]
-  },
-  {
-  slug: "1990-forestwoman",
-  year: 1990,
-  title: "Forestwoman",
-  subtitle: "Castle",
-  tags: ["Castle", "Vintage"],
-  fr: "Archère du thème Forestmen.",
-  en: "Forestmen archer character.",
-  facts: [
-    "Thème château culte",
-    "Figurine vintage",
-    "Très collectionnée"
-  ]
-}
-  
-{
-  slug: "1990-castle-female",
-  year: 1990,
-  title: "Castle Female",
-  subtitle: "Femme médiévale",
-  image: "images/1990-castle-female.jpg",
-  tags: ["Castle", "Female"],
-  fr: "Une figurine féminine du thème Castle.",
-  en: "A female figure from the Castle theme.",
-  facts: [
-    "Femme médiévale / Medieval female",
-    "Thème Castle / Castle theme",
-    "Diversité croissante / Growing diversity"
-  ]
-},
-{
-  slug: "1990-forestwoman",
-  year: 1990,
-  title: "Forestwoman",
-  subtitle: "Castle",
-  tags: ["Castle", "Vintage"],
-  fr: "Archère du thème Forestmen.",
-  en: "Forestmen archer character.",
-  facts: [
-    "Thème château culte",
-    "Figurine vintage",
-    "Très collectionnée"
-  ]
-}
-{
-  slug: "1992-knight",
-  year: 1992,
-  title: "Knight",
-  subtitle: "Castle",
-  tags: ["Castle", "Vintage"],
-  fr: "Chevalier avec cape.",
-  en: "Knight with cape.",
-  facts: [
-    "Cape en tissu",
-    "Thème château classique",
-    "Pièce vintage"
-  ]
-}
-  {
-    slug: "1993-wizard",
-    year: 1993,
-    title: "Wizard",
-    subtitle: "La magie arrive",
-    image: "images/1993-wizard.jpg",
-    tags: ["Castle", "Magic"],
-    fr: "Un magicien qui apporte la fantasy dans LEGO.",
-    en: "A wizard bringing fantasy to LEGO.",
-    facts: [
-      "Barbe iconique / Iconic beard",
-      "Chapeau pointu / Pointed hat",
-      "Très populaire / Very popular"
-    ]
-  },
-  {
-  slug: "1994-islander",
-  year: 1994,
-  title: "Islander",
-  subtitle: "Tribu LEGO",
-  image: "images/1994-islander.jpg",
-  tags: ["Islanders", "Pirates", "Tribal"],
-  fr: "Figurine du thème Islanders, liée aux Pirates LEGO.",
-  en: "A figure from the Islanders theme, linked to LEGO Pirates.",
-  facts: [
-    "Thème Islanders / Islanders theme",
-    "Très coloré / Very colorful",
-    "Collectionnable / Collectible"
-  ]
-},
-
-
-  {
-    slug: "1994-king",
-    year: 1994,
-    title: "Castle King",
-    subtitle: "La royauté LEGO",
-    image: "images/1994-king.jpg",
-    tags: ["Castle", "Royal"],
-    fr: "Une des premières grandes figures royales LEGO.",
-    en: "One of the first major royal LEGO figures.",
-    facts: [
-      "Couronne / Crown",
-      "Cape / Cape",
-      "Très imposant / Impressive"
-    ]
-  },
-
-  {
-    slug: "1995-skeleton",
-    year: 1995,
-    title: "Skeleton",
-    subtitle: "Créature culte",
-    image: "images/1995-skeleton.jpg",
-    tags: ["Castle", "Iconic"],
-    fr: "Le squelette devient une figure incontournable.",
-    en: "The skeleton becomes a must-have figure.",
-    facts: [
-      "Très connu / Very famous",
-      "Parfait pour Castle / Perfect for Castle",
-      "Toujours utilisé / Still used today"
-    ]
-  },
-  {
-  slug: "1995-paradisa-lifestyle",
-  year: 1995,
-  title: "Paradisa Figure",
-  subtitle: "Style lifestyle LEGO",
-  image: "images/1995-paradisa.jpg",
-  tags: ["Paradisa", "Lifestyle", "90s"],
-  fr: "Figurine du thème Paradisa, orienté plage et détente.",
-  en: "A figure from the Paradisa theme, focused on beach and lifestyle.",
-  facts: [
-    "Thème Paradisa / Paradisa theme",
-    "Années 90 / 90s era",
-    "Style moderne / Modern style"
-  ]
-},
-
-  {
-    slug: "1996-timmy",
-    year: 1996,
-    title: "Timmy",
-    subtitle: "Première figurine avec un nez",
-    image: "images/1996-timmy.jpg",
-    tags: ["First", "Rare"],
-    fr: "Première minifigurine LEGO avec un nez.",
-    en: "First LEGO minifigure with a nose.",
-    facts: [
-      "Très rare / Very rare",
-      "Très recherché / Collectible",
-      "Super fun fact / Great fun fact"
-    ]
-  },
-  {
-  slug: "1996-western-gambler",
-  year: 1996,
-  title: "Western Gambler",
-  subtitle: "Joueur de saloon",
-  image: "images/1996-western.jpg",
-  tags: ["Western", "Saloon"],
-  fr: "Personnage du Far West LEGO, style saloon.",
-  en: "A LEGO Wild West saloon-style character.",
-  facts: [
-    "Thème Western / Western theme",
-    "Détails imprimés / Printed details",
-    "Très unique / Very unique"
-  ]
-},
-{
-  slug: "1997-info-worker",
-  year: 1997,
-  title: "Info Center Worker",
-  subtitle: "Employé LEGO",
-  image: "images/1997-info.jpg",
-  tags: ["Town", "Service"],
-  fr: "Figurine représentant un service client ou information.",
-  en: "A figure representing customer service or information staff.",
-  facts: [
-    "Service / Service role",
-    "Ville / Town theme",
-    "Variété de métiers / Job diversity"
-  ]
-},
-{
-  slug: "1997-native-american",
-  year: 1997,
-  title: "Native American",
-  subtitle: "Personnage Western",
-  image: "images/1997-native.jpg",
-  tags: ["Western", "Native"],
-  fr: "Figurine du thème Western représentant une culture autochtone.",
-  en: "A Western theme figure representing a Native character.",
-  facts: [
-    "Thème Western / Western theme",
-    "Très détaillé / Highly detailed",
-    "Visuellement fort / Visually strong"
-  ]
-},
-
-
-  {
-    slug: "1997-cowboy",
-    year: 1997,
-    title: "Cowboy",
-    subtitle: "Le Far West LEGO",
-    image: "images/1997-cowboy.jpg",
-    tags: ["Western"],
-    fr: "Un cowboy classique du thème Western.",
-    en: "A classic cowboy from the Western theme.",
-    facts: [
-      "Très reconnaissable / Recognizable",
-      "Thème populaire / Popular theme",
-      "Style unique / Unique style"
-    ]
-  },
-  {
-  slug: "1998-ninja",
-  year: 1998,
-  title: "Ninja",
-  subtitle: "Guerrier ninja",
-  image: "images/1998-ninja.jpg",
-  tags: ["Ninja", "Castle"],
-  fr: "Figurine ninja du thème Castle.",
-  en: "A ninja figure from the Castle theme.",
-  facts: [
-    "Thème Ninja / Ninja theme",
-    "Très populaire / Very popular",
-    "Début des styles asiatiques / Asian-inspired style"
-  ]
-},
-{
-  slug: "1998-prisoner",
-  year: 1998,
-  title: "Prisoner",
-  subtitle: "Prisonnier classique",
-  image: "images/1998-prisoner.jpg",
-  tags: ["Town", "Police"],
-  fr: "Figurine prisonnier avec uniforme rayé classique.",
-  en: "A classic striped prisoner LEGO figure.",
-  facts: [
-    "Uniforme iconique / Iconic outfit",
-    "Thème police / Police theme",
-    "Très reconnaissable / Very recognizable"
-  ]
-},
-{
-  slug: "1998-technic-figure",
-  year: 1998,
-  title: "Technic Figure",
-  subtitle: "LEGO Technic",
-  tags: ["Technic"],
-  fr: "Figurine LEGO Technic articulée.",
-  en: "Articulated LEGO Technic figure.",
-  facts: [
-    "Plus grande qu’une minifigure",
-    "Articulations avancées",
-    "Design unique à Technic"
-  ]
-}
-{
-  slug: "1999-red-sox",
-  year: 1999,
-  title: "Baseball Player (Red Sox)",
-  subtitle: "Figurine sport",
-  image: "images/1999-redsox.jpg",
-  tags: ["Sport", "Baseball"],
-  fr: "Figurine inspirée du baseball avec mention Red Sox.",
-  en: "A baseball-inspired figure with Red Sox branding.",
-  facts: [
-    "Sport / Sports theme",
-    "Début influence réelle / Real-world influence",
-    "Style simple / Simple design"
-  ]
-},
-
-  {
-    slug: "1999-darth-vader",
-    year: 1999,
-    title: "Darth Vader",
-    subtitle: "Le tournant LEGO",
-    image: "images/1999-darth-vader.jpg",
-    tags: ["Star Wars", "Iconic"],
-    fr: "Star Wars change complètement LEGO.",
-    en: "Star Wars completely changes LEGO.",
-    facts: [
-      "Licence majeure / Major license",
-      "Personnage culte / Cult character",
-      "Très populaire / Very popular"
-    ]
-  },
-{
-  slug: "1999-belville-fairy",
-  year: 1999,
-  title: "Belville Fairy",
-  subtitle: "LEGO Belville",
-  tags: ["Belville"],
-  fr: "Fée issue de la gamme Belville.",
-  en: "Fairy from the Belville line.",
-  facts: [
-    "Design plus réaliste",
-    "Destiné à un autre public",
-    "Format différent des minifigurines"
-  ]
-}
-  /* =========================
-     2000s – LICENCES & MODERN
-  ========================= */
-
-  {
-  slug: "2000-soccer-adidas",
-  year: 2000,
-  title: "Soccer Player",
-  subtitle: "Adidas",
-  image: "images/2000-soccer.jpg",
-  tags: ["Sport", "Adidas"],
-  fr: "Joueur de soccer avec branding Adidas.",
-  en: "Soccer player with Adidas branding.",
-  facts: [
-    "Licence Adidas / Adidas license",
-    "Début des partenariats sportifs / Early sports licensing",
-    "Très populaire / Very popular"
-  ]
-},
-  
-  {
-    slug: "2001-harry-potter",
-    year: 2001,
-    title: "Harry Potter",
-    subtitle: "La magie LEGO",
-    image: "images/2001-harry-potter.jpg",
-    tags: ["Harry Potter", "Magic"],
-    fr: "Harry Potter devient une licence majeure.",
-    en: "Harry Potter becomes a major license.",
-    facts: [
-      "Très populaire / Very popular",
-      "Nouvelle génération / New generation",
-      "Univers magique / Magical world"
-    ]
-  },
-  {
-  slug: "2001-creator-girl",
-  year: 2001,
-  title: "Creator Girl",
-  subtitle: "LEGO Creator",
-  tags: ["Creator"],
-  fr: "Figurine classique Creator.",
-  en: "Classic Creator minifigure.",
-  facts: [
-    "Style moderne",
-    "Expressions détaillées",
-    "Transition vers LEGO actuel"
-  ]
-}
-  {
-  slug: "2002-cocacola",
-  year: 2002,
-  title: "Coca-Cola Figure",
-  subtitle: "Figurine promotionnelle",
-  image: "images/2002-coca.jpg",
-  tags: ["Promo", "Coca-Cola"],
-  fr: "Figurine promotionnelle Coca-Cola.",
-  en: "A Coca-Cola promotional figure.",
-  facts: [
-    "Très rare selon version / Rare depending version",
-    "Brand mondial / Global brand",
-    "Collection premium / Premium collectible"
-  ]
-},
-
-  {
-    slug: "2002-yoda",
-    year: 2002,
-    title: "Yoda",
-    subtitle: "Petit mais puissant",
-    image: "images/2002-yoda.jpg",
-    tags: ["Star Wars", "Iconic"],
-    fr: "Un des personnages les plus emblématiques.",
-    en: "One of the most iconic characters.",
-    facts: [
-      "Très connu / Very famous",
-      "Petit format / Small figure",
-      "Fort impact / Strong impact"
-    ]
-  },
-  {
-  slug: "2002-studios-bunny",
-  year: 2002,
-  title: "Studios Bunny",
-  subtitle: "Mascotte",
-  image: "images/2002-bunny.jpg",
-  tags: ["Studios", "Mascot"],
-  fr: "Mascotte du thème LEGO Studios.",
-  en: "Mascot from LEGO Studios theme.",
-  facts: [
-    "Thème Studios / Studios theme",
-    "Fun visuel / Fun design",
-    "Très unique / Very unique"
-  ]
-},
-
-
-  {
-    slug: "2003-nba",
-    year: 2003,
-    title: "NBA Player",
-    subtitle: "Une forme différente",
-    image: "images/2003-nba.jpg",
-    tags: ["Sports", "Unique"],
-    fr: "Une figurine LEGO très différente des autres.",
-    en: "A very different LEGO figure.",
-    facts: [
-      "Bras spéciaux / Special arms",
-      "Peu connu / Less known",
-      "Très original / Very original"
-    ]
-  },
-{
-  slug: "2003-nba-lakers",
-  year: 2003,
-  title: "NBA Player",
-  subtitle: "Lakers #8",
-  image: "images/2003-nba.jpg",
-  tags: ["NBA", "Sport"],
-  fr: "Joueur NBA avec uniforme des Lakers.",
-  en: "NBA player with Lakers uniform.",
-  facts: [
-    "Licence NBA / NBA license",
-    "Possiblement Kobe Bryant style / Possibly inspired",
-    "Très recherché / Collectible"
-  ]
-},
-{
-  slug: "2004-nhl-player",
-  year: 2004,
-  title: "Hockey Player",
-  subtitle: "NHL",
-  tags: ["Sport", "NHL"],
-  fr: "Joueur de hockey avec équipement NHL.",
-  en: "Hockey player with NHL gear.",
-  facts: [
-    "Licence NHL",
-    "Sport nord-américain fort",
-    "Très pertinent au Québec"
-  ]
-}
-{
-  slug: "2004-ferrari-barrichello",
-  year: 2004,
-  title: "Ferrari Driver",
-  subtitle: "Rubens Barrichello",
-  tags: ["Ferrari", "F1"],
-  fr: "Pilote Ferrari officiel LEGO.",
-  en: "Official Ferrari driver LEGO.",
-  facts: [
-    "Licence Ferrari",
-    "Pilote réel",
-    "Très recherché"
-  ]
-}
-{
-  slug: "2004-trelawney",
-  year: 2004,
-  title: "Professor Trelawney",
-  subtitle: "Harry Potter",
-  tags: ["Harry Potter"],
-  fr: "Professeur de divination.",
-  en: "Divination professor.",
-  facts: [
-    "Univers HP",
-    "Design distinctif",
-    "Complète Quirrell"
-  ]
-}
-{
-  slug: "2004-spiderman-villain",
-  year: 2004,
-  title: "Spider-Man Villain",
-  subtitle: "Marvel",
-  tags: ["Super Heroes", "Marvel"],
-  fr: "Vilain de l’univers Spider-Man.",
-  en: "Villain from the Spider-Man universe.",
-  facts: [
-    "Début LEGO Marvel",
-    "Design inspiré des films",
-    "Licence populaire"
-  ]
-}
-{
-  slug: "2004-belville-male",
-  year: 2004,
-  title: "Belville Male Figure",
-  subtitle: "Belville",
-  tags: ["Belville"],
-  fr: "Grande figurine articulée de la gamme LEGO Belville.",
-  en: "Large articulated figure from the LEGO Belville range.",
-  facts: [
-    "Format différent des minifigurines classiques",
-    "Univers Belville",
-    "Très distinctif dans une exposition"
-  ]
-}
-
-{
-  slug: "2005-darth-vader",
-  year: 2005,
-  title: "Darth Vader",
-  subtitle: "Star Wars",
-  tags: ["Star Wars"],
-  fr: "Darth Vader avec sabre laser.",
-  en: "Darth Vader with lightsaber.",
-  facts: [
-    "Icône mondiale",
-    "Star Wars",
-    "Incontournable"
-  ]
-}
-  {
-    slug: "2006-spongebob",
-    year: 2006,
-    title: "SpongeBob",
-    subtitle: "La télé arrive",
-    image: "images/2006-spongebob.jpg",
-    tags: ["TV", "Fun"],
-    fr: "Bob l’éponge apporte un style unique.",
-    en: "SpongeBob brings a unique style.",
-    facts: [
-      "Très coloré / Very colorful",
-      "Très connu / Very famous",
-      "Très différent / Very different"
-    ]
-  },
-
-  {
-    slug: "2006-patrick",
-    year: 2006,
-    title: "Patrick",
-    subtitle: "Forme unique",
-    image: "images/2006-patrick.jpg",
-    tags: ["TV", "Fun"],
-    fr: "Une des figurines les plus différentes LEGO.",
-    en: "One of the most unique LEGO figures.",
-    facts: [
-      "Forme spéciale / Special shape",
-      "Très drôle / Very funny",
-      "Attire l’attention / Eye-catching"
-    ]
-  },
-  {
-  slug: "2006-lego-world",
-  year: 2006,
-  title: "LEGO World",
-  subtitle: "Event Exclusive",
-  tags: ["Exclusive", "Event"],
-  fr: "Figurine d’événement LEGO World.",
-  en: "LEGO World event minifigure.",
-  facts: [
-    "Distribuée lors d’événements",
-    "Souvenir officiel",
-    "Collection recherchée"
-  ]
-}
-  {
-  slug: "2007-belville-knight",
-  year: 2007,
-  title: "Knight Figure",
-  subtitle: "LEGO Belville",
-  tags: ["Belville", "Castle"],
-  fr: "Personnage chevalier version Belville.",
-  en: "Knight character in Belville style.",
-  facts: [
-    "Dernières années Belville",
-    "Style réaliste",
-    "Univers médiéval"
-  ]
-}
-
-  {
-    slug: "2007-indiana-jones",
-    year: 2007,
-    title: "Indiana Jones",
-    subtitle: "Aventure cinéma",
-    image: "images/2007-indiana-jones.jpg",
-    tags: ["Movie", "Adventure"],
-    fr: "Une grande icône du cinéma en LEGO.",
-    en: "A major movie icon in LEGO.",
-    facts: [
-      "Très connu / Very famous",
-      "Style aventure / Adventure style",
-      "Super expo / Great display"
-    ]
-  },
-  {
-  slug: "2007-adidas-player",
-  year: 2007,
-  title: "Adidas Player",
-  subtitle: "LEGO Sports",
-  tags: ["Sports", "Adidas"],
-  fr: "Figurine promotionnelle Adidas.",
-  en: "Adidas promotional minifigure.",
-  facts: [
-    "Collaboration officielle",
-    "Distribution limitée",
-    "Style urbain"
-  ]
-}
-  {
-  slug: "2008-agent-cyborg",
-  year: 2008,
-  title: "Agent Cyborg",
-  subtitle: "Agents",
-  tags: ["Agents", "Sci-Fi"],
-  fr: "Agent avec implants cybernétiques.",
-  en: "Agent with cybernetic enhancements.",
-  facts: [
-    "Thème Agents",
-    "Style futuriste",
-    "Design très détaillé"
-  ]
-}
-{
-  slug: "2008-lego-50-years",
-  year: 2008,
-  title: "50 Years LEGO",
-  subtitle: "Anniversary",
-  tags: ["Classic"],
-  fr: "Figurine anniversaire des 50 ans LEGO.",
-  en: "LEGO 50th anniversary figure.",
-  facts: [
-    "Pièce historique",
-    "Très symbolique",
-    "Parfait pour expo"
-  ]
-}
-
-{
-  slug: "2008-indiana-jones",
-  year: 2008,
-  title: "Indiana Jones",
-  subtitle: "Adventurer",
-  tags: ["Indiana Jones"],
-  fr: "Indiana Jones, aventurier légendaire.",
-  en: "Indiana Jones, legendary adventurer.",
-  facts: [
-    "Licence culte",
-    "Très populaire",
-    "Figure iconique"
-  ]
-}
-{
-  slug: "2009-space-alien",
-  year: 2009,
-  title: "Alien Creature",
-  subtitle: "Space",
-  tags: ["Space"],
-  fr: "Créature extraterrestre LEGO.",
-  en: "LEGO alien creature.",
-  facts: [
-    "Design unique",
-    "Non humain",
-    "Très accrocheur pour enfants"
-  ]
-}
-  {
-    slug: "2009-modern-astronaut",
-    year: 2009,
-    title: "Modern Astronaut",
-    subtitle: "L’espace continue",
-    image: "images/2009-modern-astronaut.jpg",
-    tags: ["Space", "Modern"],
-    fr: "L’espace reste un thème fort.",
-    en: "Space remains a strong theme.",
-    facts: [
-      "Design moderne / Modern design",
-      "Continuité / Continuity",
-      "Très visuel / Very visual"
-    ]
-  },
-
-  {
-    slug: "2009-scientist",
-    year: 2009,
-    title: "Scientist",
-    subtitle: "LEGO explore aussi la science",
-    image: "images/2009-scientist.jpg",
-    tags: ["Town", "Science", "Character", "Fun"],
-    fr: "Une figurine de scientifique qui ajoute un nouveau type de personnage à la collection.",
-    en: "A scientist figure that adds a new kind of character to the collection.",
-    facts: [
-      "Bon thème éducatif / Good educational theme",
-      "Ajoute de la variété / Adds variety",
-      "Très intéressant en expo / Very interesting in an exhibition"
-    ]
-  },
-
-  {
-    slug: "2010-harry-potter",
-    year: 2010,
-    title: "Harry Potter",
-    subtitle: "Le monde magique continue",
-    image: "images/2010-harry-potter.jpg",
-    tags: ["Harry Potter", "Magic", "License", "Iconic"],
-    fr: "Harry Potter reste une des grandes licences LEGO des années 2010.",
-    en: "Harry Potter remains one of LEGO’s major licenses in the 2010s.",
-    facts: [
-      "Très populaire / Very popular",
-      "Univers magique / Magical universe",
-      "Très bon repère chronologique / Great timeline marker"
-    ]
-  },
-  {
-  slug: "2010-prince-persia-guard",
-  year: 2010,
-  title: "Persian Guard",
-  subtitle: "Prince of Persia",
-  tags: ["Movie"],
-  fr: "Soldat du film Prince of Persia.",
-  en: "Guard from Prince of Persia.",
-  facts: [
-    "Thème abandonné par LEGO",
-    "Relativement rare aujourd’hui",
-    "Intéressant pour collectionneurs"
-  ]
-}
-
-  {
-    slug: "2010-aayla-secura",
-    year: 2010,
-    title: "Aayla Secura",
-    subtitle: "Plus de variété dans Star Wars",
-    image: "images/2010-aayla-secura.jpg",
-    tags: ["Star Wars", "Sci-Fi", "Character", "Detailed"],
-    fr: "Une figurine Star Wars qui montre la richesse croissante des personnages.",
-    en: "A Star Wars figure that shows the growing richness of the characters.",
-    facts: [
-      "Plus de détails / More details",
-      "Plus de personnages secondaires / More secondary characters",
-      "Très bonne évolution des licences / Great evolution of licenses"
-    ]
-  },
-
-  {
-    slug: "2011-batman",
-    year: 2011,
-    title: "Batman",
-    subtitle: "Le super-héros incontournable",
-    image: "images/2011-batman.jpg",
-    tags: ["Batman", "DC", "License", "Iconic"],
-    fr: "Batman reste une des grandes figures modernes de LEGO.",
-    en: "Batman remains one of LEGO’s great modern figures.",
-    facts: [
-      "Très reconnaissable / Very recognizable",
-      "Cape iconique / Iconic cape",
-      "Toujours populaire / Always popular"
-    ]
-  },
-
-  {
-    slug: "2011-superman",
-    year: 2011,
-    title: "Superman",
-    subtitle: "Une autre grande icône DC",
-    image: "images/2011-superman.jpg",
-    tags: ["Superman", "DC", "License", "Iconic"],
-    fr: "Superman apporte une autre grande icône des super-héros chez LEGO.",
-    en: "Superman brings another major superhero icon into LEGO.",
-    facts: [
-      "Très connu / Very famous",
-      "Grande figure DC / Major DC figure",
-      "Belle présence visuelle / Strong visual presence"
-    ]
-  },
-
-  {
-    slug: "2011-sensei-wu",
-    year: 2011,
-    title: "Sensei Wu",
-    subtitle: "Ninjago devient un classique moderne",
-    image: "images/2011-sensei-wu.jpg",
-    tags: ["Ninjago", "Original Theme", "Modern Classic"],
-    fr: "Sensei Wu représente un des grands succès originaux de LEGO moderne.",
-    en: "Sensei Wu represents one of the great original successes of modern LEGO.",
-    facts: [
-      "Important pour Ninjago / Important for Ninjago",
-      "Montre que LEGO crée encore ses propres héros / Shows LEGO still creates its own heroes",
-      "Très bon repère moderne / Great modern milestone"
-    ]
-  },
-  {
-  slug: "2011-jack-sparrow",
-  year: 2011,
-  title: "Jack Sparrow",
-  subtitle: "Pirates of the Caribbean",
-  tags: ["Movie", "Pirates"],
-  fr: "Capitaine Jack Sparrow.",
-  en: "Captain Jack Sparrow.",
-  facts: [
-    "Personnage extrêmement populaire",
-    "Une des premières licences LEGO pirates modernes",
-    "Très recherché"
-  ]
-}
-  
-{
-  slug: "2012-gimli",
-  year: 2012,
-  title: "Gimli",
-  subtitle: "Lord of the Rings",
-  tags: ["LOTR"],
-  fr: "Gimli, le nain guerrier du Seigneur des Anneaux.",
-  en: "Gimli, dwarf warrior from LOTR.",
-  facts: [
-    "Licence majeure",
-    "Barbe moulée iconique",
-    "Très recherché"
-  ]
-}
-
-  {
-    slug: "2012-spider-man",
-    year: 2012,
-    title: "Spider-Man",
-    subtitle: "Le héros Marvel se renforce",
-    image: "images/2012-spider-man.jpg",
-    tags: ["Spider-Man", "Marvel", "License", "Iconic"],
-    fr: "Spider-Man reste un des héros Marvel les plus forts chez LEGO.",
-    en: "Spider-Man remains one of LEGO’s strongest Marvel heroes.",
-    facts: [
-      "Très populaire / Very popular",
-      "Costume iconique / Iconic costume",
-      "Excellent pour la vitrine / Excellent for display"
-    ]
-  },
-
-  {
-    slug: "2012-loki",
-    year: 2012,
-    title: "Loki",
-    subtitle: "Un vilain marquant",
-    image: "images/2012-loki.jpg",
-    tags: ["Marvel", "Villain", "License", "Character"],
-    fr: "Loki apporte une forte présence de vilain dans l’univers LEGO Marvel.",
-    en: "Loki brings a strong villain presence to the LEGO Marvel universe.",
-    facts: [
-      "Très reconnaissable / Very recognizable",
-      "Bon rival des héros / Great rival for heroes",
-      "Style très fort / Very strong style"
-    ]
-  },
-
-  {
-    slug: "2012-joker",
-    year: 2012,
-    title: "Joker",
-    subtitle: "Un visage culte de LEGO",
-    image: "images/2012-joker.jpg",
-    tags: ["Batman", "DC", "Villain", "Iconic"],
-    fr: "Le Joker est une des figurines les plus marquantes et expressives de LEGO.",
-    en: "The Joker is one of the most memorable and expressive LEGO figures.",
-    facts: [
-      "Très coloré / Very colorful",
-      "Très connu / Very famous",
-      "Parfait pour surprendre / Perfect for surprising visitors"
-    ]
-  },
-
-  {
-    slug: "2012-hulk",
-    year: 2012,
-    title: "Hulk",
-    subtitle: "Un héros puissant et différent",
-    image: "images/2012-hulk.jpg",
-    tags: ["Marvel", "Super Heroes", "License", "Iconic"],
-    fr: "Hulk apporte une silhouette beaucoup plus massive au monde LEGO.",
-    en: "Hulk brings a much larger silhouette to the LEGO world.",
-    facts: [
-      "Très fort visuellement / Very strong visually",
-      "Format différent / Different format",
-      "Très aimé du public / Loved by the public"
-    ]
-  },
-
-  {
-    slug: "2012-clockwork-robot",
-    year: 2012,
-    title: "Clockwork Robot",
-    subtitle: "Un design plus poussé",
-    image: "images/2012-clockwork-robot.jpg",
-    tags: ["Robot", "Sci-Fi", "Fun", "Design"],
-    fr: "Un robot LEGO qui montre un design plus original et plus détaillé.",
-    en: "A LEGO robot that shows a more original and more detailed design.",
-    facts: [
-      "Très visuel / Very visual",
-      "Beau niveau de détail / Great level of detail",
-      "Attire bien l’œil en vitrine / Eye-catching in a display"
-    ]
-  },
-  {
-  slug: "2012-c3po-chrome",
-  year: 2012,
-  title: "C-3PO (Chrome)",
-  subtitle: "Star Wars",
-  tags: ["Star Wars"],
-  fr: "Version chromée spéciale du droïde C-3PO.",
-  en: "Special chrome version of C-3PO.",
-  facts: [
-    "Finition métallisée",
-    "Très recherché",
-    "Design iconique"
-  ]
-}
-{
-  slug: "2012-british-suit",
-  year: 2012,
-  title: "British Suit",
-  subtitle: "City / Promotional",
-  tags: ["City"],
-  fr: "Costume avec drapeau britannique.",
-  en: "Suit with British flag design.",
-  facts: [
-    "Design original",
-    "Souvent utilisé en promo",
-    "Très reconnaissable"
-  ]
-}
-{
-  slug: "2012-skater-hoodie",
-  year: 2012,
-  title: "Skater Hoodie",
-  subtitle: "Town / City",
-  tags: ["City"],
-  fr: "Jeune avec hoodie LEGO et casquette.",
-  en: "Teen with LEGO hoodie and cap.",
-  facts: [
-    "Style urbain moderne",
-    "Très populaire dans les sets City",
-    "Impression LEGO sur le chandail"
-  ]
-}
-{
-  slug: "2013-azog",
-  year: 2013,
-  title: "Azog",
-  subtitle: "The Hobbit",
-  tags: ["Le Seigneur des Anneaux"],
-  fr: "Chef Orc du film Le Hobbit.",
-  en: "Orc leader from The Hobbit.",
-  facts: [
-    "Tête moulée unique",
-    "Personnage principal antagoniste",
-    "Design détaillé"
-  ]
-}
-{
-  slug: "2013-alien-insect",
-  year: 2013,
-  title: "Alien Insecte",
-  subtitle: "Galaxy Squad",
-  tags: ["Sci-Fi"],
-  fr: "Créature extraterrestre inspirée des insectes.",
-  en: "Alien creature inspired by insects.",
-  facts: [
-    "Ailes translucides",
-    "Design unique",
-    "Univers science-fiction"
-  ]
-}
-
-  {
-    slug: "2013-wolverine",
-    year: 2013,
-    title: "Wolverine",
-    subtitle: "Un héros Marvel très reconnaissable",
-    image: "images/2013-wolverine.jpg",
-    tags: ["Marvel", "X-Men", "License", "Iconic"],
-    fr: "Wolverine ajoute un héros Marvel culte à la collection.",
-    en: "Wolverine adds a cult Marvel hero to the collection.",
-    facts: [
-      "Très reconnaissable / Very recognizable",
-      "Costume marquant / Striking costume",
-      "Très bon ajout super-héros / Great superhero addition"
-    ]
-  },
-{
-  slug: "2013-azog",
-  year: 2013,
-  title: "Azog",
-  subtitle: "The Hobbit",
-  tags: ["Le Seigneur des Anneaux"],
-  fr: "Chef Orc du film Le Hobbit.",
-  en: "Orc leader from The Hobbit.",
-  facts: [
-    "Tête moulée unique",
-    "Personnage principal antagoniste",
-    "Design détaillé"
-  ]
-}
-{
-  slug: "2013-marty-mcfly",
-  year: 2013,
-  title: "Marty McFly",
-  subtitle: "Back to the Future",
-  tags: ["Cinéma"],
-  fr: "Personnage principal du film Retour vers le futur.",
-  en: "Main character from Back to the Future.",
-  facts: [
-    "Inclut une guitare",
-    "Film culte",
-    "Licence populaire"
-  ]
-}
-
-  {
-    slug: "2013-raphael",
-    year: 2013,
-    title: "Raphael",
-    subtitle: "Les Tortues Ninja prennent leur place",
-    image: "images/2013-raphael.jpg",
-    tags: ["TMNT", "TV", "License", "Iconic"],
-    fr: "Raphael montre la force visuelle des Tortues Ninja chez LEGO.",
-    en: "Raphael shows the visual strength of the Teenage Mutant Ninja Turtles in LEGO.",
-    facts: [
-      "Tête spéciale / Special head mold",
-      "Très aimé / Fan favorite",
-      "Très bon personnage d’expo / Great exhibition character"
-    ]
-  },
-  {
-  slug: "2013-donatello",
-  year: 2013,
-  title: "Donatello",
-  subtitle: "Teenage Mutant Ninja Turtles",
-  tags: ["TMNT"],
-  fr: "Tortue Ninja connue pour son intelligence.",
-  en: "Ninja Turtle known for his intelligence.",
-  facts: [
-    "Masque violet",
-    "Personnage culte",
-    "Licence populaire"
-  ]
-}
-{
-  slug: "2013-tara",
-  year: 2013,
-  title: "Tara",
-  subtitle: "Collectible Minifigures",
-  tags: ["CMF"],
-  fr: "Personnage issu des figurines à collectionner.",
-  en: "Character from collectible minifigures series.",
-  facts: [
-    "Série CMF",
-    "Personnage civil",
-    "Diversité LEGO"
-  ]
-}
-
-  {
-    slug: "2014-minecraft-steve",
-    year: 2014,
-    title: "Minecraft Steve",
-    subtitle: "Le jeu vidéo entre chez LEGO",
-    image: "images/2014-minecraft-steve.jpg",
-    tags: ["Minecraft", "Video Game", "License", "Modern"],
-    fr: "Steve montre la rencontre entre LEGO et le jeu vidéo Minecraft.",
-    en: "Steve shows the meeting between LEGO and the Minecraft video game.",
-    facts: [
-      "Style cubique unique / Unique blocky style",
-      "Très fort pour les jeunes visiteurs / Very strong with younger visitors",
-      "Grand moment de culture populaire / Big pop culture moment"
-    ]
-  },
-  {
-  slug: "2014-hero-factory",
-  year: 2014,
-  title: "Hero Factory",
-  subtitle: "LEGO",
-  tags: ["Robot"],
-  fr: "Figurine robotisée au design futuriste.",
-  en: "Robotic figure with a futuristic design.",
-  facts: [
-    "Style mécanique",
-    "Univers LEGO original",
-    "Design avancé"
-  ]
-}
-
-  {
-    slug: "2014-creeper",
-    year: 2014,
-    title: "Creeper",
-    subtitle: "Une créature iconique de Minecraft",
-    image: "images/2014-creeper.jpg",
-    tags: ["Minecraft", "Video Game", "License", "Iconic"],
-    fr: "Le Creeper est une des créatures les plus connues de Minecraft chez LEGO.",
-    en: "The Creeper is one of the best-known Minecraft creatures in LEGO.",
-    facts: [
-      "Très reconnaissable / Very recognizable",
-      "Design simple et fort / Simple and strong design",
-      "Excellent fun fact / Excellent fun fact"
-    ]
-  },
-
-  {
-    slug: "2014-flash",
-    year: 2014,
-    title: "The Flash",
-    subtitle: "La vitesse arrive chez LEGO",
-    image: "images/2014-flash.jpg",
-    tags: ["DC", "Super Heroes", "License", "Character"],
-    fr: "Flash ajoute un autre héros très connu à la gamme LEGO DC.",
-    en: "The Flash adds another well-known hero to the LEGO DC range.",
-    facts: [
-      "Très célèbre / Very famous",
-      "Couleur vive / Bright color",
-      "Très bon visuel / Great visual style"
-    ]
-  },
-  {
-  slug: "2014-homer-simpson",
-  year: 2014,
-  title: "Homer Simpson",
-  subtitle: "The Simpsons",
-  tags: ["TV", "Collectible"],
-  fr: "Homer Simpson, personnage principal des Simpsons.",
-  en: "Homer Simpson, main character from The Simpsons.",
-  facts: [
-    "Première série LEGO Simpsons",
-    "Personnage culte mondial",
-    "Très recherché par les fans"
-  ]
-}
-  {
-  slug: "2014-gollum",
-  year: 2014,
-  title: "Gollum",
-  subtitle: "Le Seigneur des Anneaux / The Hobbit",
-  tags: ["Le Seigneur des Anneaux"],
-  fr: "Créature emblématique de l’univers du Seigneur des Anneaux.",
-  en: "Iconic creature from The Lord of the Rings universe.",
-  facts: [
-    "Personnage culte",
-    "Tête moulée distinctive",
-    "Très reconnaissable"
-  ]
-}
-{
-  slug: "2014-danmarks-indsamling",
-  year: 2014,
-  title: "Danmarks Indsamling",
-  subtitle: "Charity Minifigure",
-  tags: ["Exclusive", "Charity"],
-  fr: "Figurine d’événement caritatif LEGO.",
-  en: "LEGO charity event minifigure.",
-  facts: [
-    "Rare hors Danemark",
-    "Distribution limitée",
-    "Version antérieure 2019"
-  ]
-}
-{
-  slug: "2014-lego-house",
-  year: 2014,
-  title: "LEGO House",
-  subtitle: "Event Exclusive",
-  tags: ["Exclusive", "Event"],
-  fr: "Figurines visiteurs LEGO House.",
-  en: "LEGO House visitor minifigures.",
-  facts: [
-    "Lieu emblématique au Danemark",
-    "Distribution limitée",
-    "Très recherché"
-  ]
-}
-
-  {
-    slug: "2015-batman",
-    year: 2015,
-    title: "Batman",
-    subtitle: "Toujours une valeur sûre",
-    image: "images/2015-batman.jpg",
-    tags: ["Batman", "DC", "License", "Iconic"],
-    fr: "Batman reste une des figures les plus fortes de toute la collection LEGO.",
-    en: "Batman remains one of the strongest figures in the entire LEGO collection.",
-    facts: [
-      "Très iconique / Very iconic",
-      "Très populaire / Very popular",
-      "Toujours marquant en vitrine / Always striking in a display"
-    ]
-  },
-
-  {
-    slug: "2015-scooby-doo",
-    year: 2015,
-    title: "Scooby-Doo",
-    subtitle: "Une licence rétro très fun",
-    image: "images/2015-scooby-doo.jpg",
-    tags: ["Scooby-Doo", "TV", "License", "Fun"],
-    fr: "Scooby-Doo apporte humour et nostalgie à la collection LEGO.",
-    en: "Scooby-Doo brings humor and nostalgia to the LEGO collection.",
-    facts: [
-      "Très reconnaissable / Very recognizable",
-      "Très amusant / Very fun",
-      "Excellent pour l’expo / Excellent for exhibition"
-    ]
-  },
-
-  {
-    slug: "2015-shaggy",
-    year: 2015,
-    title: "Shaggy",
-    subtitle: "Le duo avec Scooby-Doo",
-    image: "images/2015-shaggy.jpg",
-    tags: ["Scooby-Doo", "TV", "License", "Character"],
-    fr: "Shaggy complète parfaitement l’univers Scooby-Doo chez LEGO.",
-    en: "Shaggy perfectly completes the Scooby-Doo universe in LEGO.",
-    facts: [
-      "Très connu / Very well known",
-      "Excellent duo / Excellent duo",
-      "Ajoute du charme / Adds charm"
-    ]
-  },
-
-  {
-    slug: "2015-dracula",
-    year: 2015,
-    title: "Dracula",
-    subtitle: "Une créature classique revisitée",
-    image: "images/2015-dracula.jpg",
-    tags: ["Monster", "Fun", "Character", "Iconic"],
-    fr: "Dracula ajoute une touche de monstre classique à la collection.",
-    en: "Dracula adds a classic monster touch to the collection.",
-    facts: [
-      "Très bon look / Great look",
-      "Parfait pour surprendre / Perfect for surprising visitors",
-      "Très bon fun fact / Great fun fact"
-    ]
-  },
-  {
-  slug: "2016-harley-quinn",
-  year: 2016,
-  title: "Harley Quinn",
-  subtitle: "DC Comics",
-  tags: ["Super Heroes", "DC"],
-  fr: "Harley Quinn version Suicide Squad.",
-  en: "Harley Quinn Suicide Squad version.",
-  facts: [
-    "Personnage populaire",
-    "Détails imprimés complexes",
-    "Très apprécié des fans"
-  ]
-}
-
-  {
-  slug: "2016-educator",
-  year: 2016,
-  title: "Educator",
-  subtitle: "LEGO Education",
-  tags: ["Education"],
-  fr: "Figurine issue du programme LEGO Education.",
-  en: "Figure from LEGO Education program.",
-  facts: [
-    "Usage éducatif",
-    "Distribution spécialisée",
-    "Moins commune"
-  ]
-}
-
-  {
-    slug: "2016-finn",
-    year: 2016,
-    title: "Finn",
-    subtitle: "Adventure Time entre chez LEGO",
-    image: "images/2016-finn.jpg",
-    tags: ["TV", "Cartoon", "License", "Fun"],
-    fr: "Finn apporte une autre grande série animée dans l’univers LEGO.",
-    en: "Finn brings another major animated series into the LEGO universe.",
-    facts: [
-      "Très différent / Very different",
-      "Très populaire / Very popular",
-      "Ajoute beaucoup de variété / Adds a lot of variety"
-    ]
-  },
-  {
-  slug: "2016-germany-player",
-  year: 2016,
-  title: "Germany Football Player",
-  subtitle: "DFB Team",
-  tags: ["Sports", "Exclusive"],
-  fr: "Joueur officiel de l’équipe d’Allemagne.",
-  en: "Official Germany national team player.",
-  facts: [
-    "Collaboration avec Adidas",
-    "Licencié officiel FIFA",
-    "Collection spéciale soccer"
-  ]
-}
-{
-  slug: "2016-nexo-knight",
-  year: 2016,
-  title: "Nexo Knight",
-  subtitle: "Nexo Knights",
-  tags: ["Nexo Knights"],
-  fr: "Chevalier futuriste en armure.",
-  en: "Futuristic armored knight.",
-  facts: [
-    "Mélange médiéval et futuriste",
-    "Armure complète",
-    "Très visuel pour expo"
-  ]
-}
-{
-  slug: "2016-gizmo",
-  year: 2016,
-  title: "Gizmo",
-  subtitle: "Gremlins (Dimensions)",
-  tags: ["Dimensions", "Movie"],
-  fr: "Personnage du film Gremlins.",
-  en: "Character from Gremlins movie.",
-  facts: [
-    "Licence culte",
-    "Format spécial Dimensions",
-    "Très aimé du public"
-  ]
-}
-{
-  slug: "2016-stay-puft",
-  year: 2016,
-  title: "Stay Puft",
-  subtitle: "Ghostbusters",
-  tags: ["Dimensions", "Movie"],
-  fr: "Mascotte géante de Ghostbusters.",
-  en: "Ghostbusters giant mascot.",
-  facts: [
-    "Personnage iconique",
-    "Version LEGO Dimensions",
-    "Très reconnaissable"
-  ]
-}
-{
-  slug: "2016-supergirl",
-  year: 2016,
-  title: "Supergirl",
-  subtitle: "DC Comics",
-  tags: ["Super Heroes", "DC"],
-  fr: "Supergirl avec cape.",
-  en: "Supergirl with cape.",
-  facts: [
-    "Personnage DC populaire",
-    "Version Dimensions",
-    "Très apprécié des fans"
-  ]
-}
-{
-  slug: "2016-ethan-hunt",
-  year: 2016,
-  title: "Ethan Hunt",
-  subtitle: "Mission Impossible",
-  tags: ["Ideas", "Movie"],
-  fr: "Personnage principal de Mission Impossible.",
-  en: "Main character from Mission Impossible.",
-  facts: [
-    "Rare en LEGO",
-    "Licence cinéma",
-    "Très intéressant pour collection"
-  ]
-}
-{
-  slug: "2016-angry-bird-red",
-  year: 2016,
-  title: "Red",
-  subtitle: "Angry Birds",
-  tags: ["Angry Birds"],
-  fr: "Personnage principal Angry Birds.",
-  en: "Main Angry Birds character.",
-  facts: [
-    "Design unique (pas humanoïde)",
-    "Très populaire auprès des enfants",
-    "Différent des minifigs classiques"
-  ]
-}
-{
-  slug: "2016-slimer",
-  year: 2016,
-  title: "Slimer",
-  subtitle: "Ghostbusters",
-  tags: ["Dimensions", "Movie"],
-  fr: "Fantôme gluant de Ghostbusters.",
-  en: "Ghost from Ghostbusters.",
-  facts: [
-    "Personnage culte",
-    "Design très expressif",
-    "Attire l’attention en expo"
-  ]
-}
-{
-  slug: "2016-et",
-  year: 2016,
-  title: "E.T.",
-  subtitle: "E.T. the Extra-Terrestrial",
-  tags: ["Dimensions", "Movie"],
-  fr: "Alien du film E.T.",
-  en: "Alien from E.T. movie.",
-  facts: [
-    "Licence extrêmement connue",
-    "Figurine iconique",
-    "Très forte valeur nostalgique"
-  ]
-}
-
-
-  {
-    slug: "2016-alice",
-    year: 2016,
-    title: "Alice",
-    subtitle: "Un personnage classique revisité",
-    image: "images/2016-alice.jpg",
-    tags: ["Movie", "Fantasy", "Character", "Fun"],
-    fr: "Alice apporte une figure de conte très reconnaissable chez LEGO.",
-    en: "Alice brings a very recognizable storybook character into LEGO.",
-    facts: [
-      "Très connue / Very well known",
-      "Style doux / Soft style",
-      "Belle présence en expo / Great exhibition presence"
-    ]
-  },
-{
-  slug: "2016-mr-t",
-  year: 2016,
-  title: "Mr. T",
-  subtitle: "The A-Team",
-  tags: ["Télévision"],
-  fr: "Personnage légendaire de la série The A-Team.",
-  en: "Legendary character from The A-Team television series.",
-  facts: [
-    "Basé sur une personne réelle",
-    "Chaînes dorées iconiques",
-    "Très populaire en culture pop"
-  ]
-}
-  {
-    slug: "2016-robin",
-    year: 2016,
-    title: "Robin",
-    subtitle: "Un classique de Batman",
-    image: "images/2016-robin.jpg",
-    tags: ["Batman", "DC", "License", "Character"],
-    fr: "Robin complète parfaitement l’univers Batman chez LEGO.",
-    en: "Robin perfectly completes the Batman universe in LEGO.",
-    facts: [
-      "Très coloré / Very colorful",
-      "Très connu / Very famous",
-      "Excellent duo avec Batman / Excellent duo with Batman"
-    ]
-  },
-  {
-  slug: "2016-pirate",
-  year: 2016,
-  title: "Pirate",
-  subtitle: "LEGO Minifigures",
-  tags: ["Pirates", "Collectible"],
-  fr: "Pirate avec cache-œil et cicatrices.",
-  en: "Pirate with eyepatch and scars.",
-  facts: [
-    "Style détaillé moderne",
-    "Expression faciale expressive",
-    "Univers classique LEGO Pirates"
-  ]
-}
-
-  {
-    slug: "2017-sonic",
-    year: 2017,
-    title: "Sonic",
-    subtitle: "Une icône du jeu vidéo",
-    image: "images/2017-sonic.jpg",
-    tags: ["Sonic", "Video Game", "Fun", "License"],
-    fr: "Sonic apporte une autre grande icône du jeu vidéo chez LEGO.",
-    en: "Sonic brings another great video game icon into LEGO.",
-    facts: [
-      "Bleu très reconnaissable / Very recognizable blue color",
-      "Très populaire / Very popular",
-      "Excellent personnage pop culture / Excellent pop culture character"
-    ]
-  },
-  {
-  slug: "2017-bizarro",
-  year: 2017,
-  title: "Bizarro",
-  subtitle: "DC Comics",
-  tags: ["DC Comics"],
-  fr: "Version étrange et inversée de Superman dans l’univers DC.",
-  en: "Strange and reversed version of Superman in the DC universe.",
-  facts: [
-    "Inspiré de Superman",
-    "Design très particulier",
-    "Personnage marquant"
-  ]
-}
-
-  {
-    slug: "2017-angry-birds-red",
-    year: 2017,
-    title: "Red",
-    subtitle: "Angry Birds arrive chez LEGO",
-    image: "images/2017-angry-birds-red.jpg",
-    tags: ["Angry Birds", "Video Game", "License", "Fun"],
-    fr: "Red apporte un autre univers de jeu vidéo dans la collection LEGO.",
-    en: "Red brings another video game universe into the LEGO collection.",
-    facts: [
-      "Très connu / Very well known",
-      "Forme spéciale / Special shape",
-      "Très amusant en vitrine / Very fun in a display"
-    ]
-  },
-
-  {
-    slug: "2017-beetlejuice",
-    year: 2017,
-    title: "Beetlejuice",
-    subtitle: "Une référence culte très originale",
-    image: "images/2017-beetlejuice.jpg",
-    tags: ["Movie", "Cult", "License", "Fun"],
-    fr: "Beetlejuice est une figurine très originale et mémorable en exposition.",
-    en: "Beetlejuice is a very original and memorable exhibition figure.",
-    facts: [
-      "Référence culte / Cult reference",
-      "Très original / Very original",
-      "Parfait pour surprendre / Perfect for surprising visitors"
-    ]
-  },
-
-  {
-    slug: "2018-clock-king",
-    year: 2018,
-    title: "Clock King",
-    subtitle: "Un vilain au look unique",
-    image: "images/2018-clock-king.jpg",
-    tags: ["DC", "Villain", "License", "Fun"],
-    fr: "Clock King ajoute un style très particulier à la collection de vilains LEGO.",
-    en: "Clock King adds a very distinctive style to the LEGO villain collection.",
-    facts: [
-      "Très original / Very original",
-      "Look marquant / Memorable look",
-      "Bon fun fact / Good fun fact"
-    ]
-  },
-
-  {
-    slug: "2018-voldemort",
-    year: 2018,
-    title: "Voldemort",
-    subtitle: "Le grand vilain de Harry Potter",
-    image: "images/2018-voldemort.jpg",
-    tags: ["Harry Potter", "Villain", "License", "Iconic"],
-    fr: "Voldemort représente parfaitement le côté sombre du monde Harry Potter.",
-    en: "Voldemort perfectly represents the dark side of the Harry Potter world.",
-    facts: [
-      "Très connu / Very famous",
-      "Vilain culte / Cult villain",
-      "Très fort visuellement / Very strong visually"
-    ]
-  },
-  
-  
-{
-  slug: "2018-gold-statue",
-  year: 2018,
-  title: "Gold Statue",
-  subtitle: "Collectible Minifigures",
-  tags: ["Collectible", "Gold"],
-  fr: "Figurine entièrement dorée style statue.",
-  en: "Fully gold statue-style minifigure.",
-  facts: [
-    "Finition chromée",
-    "Très visuelle en exposition",
-    "Série à collectionner"
-  ]
-}
-{
-  slug: "2018-jurassic-ranger",
-  year: 2018,
-  title: "Jurassic Ranger",
-  subtitle: "Jurassic World",
-  tags: ["Movie"],
-  fr: "Explorateur Jurassic World.",
-  en: "Jurassic World ranger.",
-  facts: [
-    "Licence dinosaures populaire",
-    "Look aventure",
-    "Facile à reconnaître"
-  ]
-}
-  {
-    slug: "2018-harry-potter-return",
-    year: 2018,
-    title: "Harry Potter Returns",
-    subtitle: "Le monde magique revient",
-    image: "images/2018-harry-potter-return.jpg",
-    tags: ["Harry Potter", "Magic", "License", "Return"],
-    fr: "Harry Potter revient et reconnecte une nouvelle génération à LEGO.",
-    en: "Harry Potter returns and reconnects a new generation to LEGO.",
-    facts: [
-      "Très bon retour / Great comeback",
-      "Relie deux époques / Connects two eras",
-      "Très populaire / Very popular"
-    ]
-  },
-  {
-  slug: "2018-bumblebee-girl",
-  year: 2018,
-  title: "Bumblebee Girl",
-  subtitle: "Collectible Minifigures",
-  tags: ["Collectible"],
-  fr: "Costume d’abeille amusant.",
-  en: "Fun bee costume character.",
-  facts: [
-    "Série à collectionner",
-    "Design humoristique",
-    "Accessoires uniques"
-  ]
-}
-{
-  slug: "2019-danmarks-indsamling",
-  year: 2019,
-  title: "Danmarks Indsamling",
-  subtitle: "Charity Minifigure",
-  tags: ["Exclusive", "Charity"],
-  fr: "Figurine promotionnelle pour une œuvre caritative.",
-  en: "Promotional minifigure for a charity event.",
-  facts: [
-    "Distribution limitée",
-    "Événement danois",
-    "Non vendu en set classique"
-  ]
-}
-{
-  slug: "2019-brick-friday",
-  year: 2019,
-  title: "Brick Friday",
-  subtitle: "Exclusive",
-  tags: ["Exclusive", "Event"],
-  fr: "Figurine événement Brick Friday 2019.",
-  en: "Brick Friday 2019 event figure.",
-  facts: [
-    "Très limité",
-    "Distribution spéciale",
-    "Collection niche"
-  ]
-}
-  {
-    slug: "2019-harry-potter",
-    year: 2019,
-    title: "Harry Potter",
-    subtitle: "Une licence toujours forte",
-    image: "images/2019-harry-potter.jpg",
-    tags: ["Harry Potter", "Magic", "License", "Iconic"],
-    fr: "Harry Potter reste une des figures les plus fortes de la fin des années 2010.",
-    en: "Harry Potter remains one of the strongest figures of the late 2010s.",
-    facts: [
-      "Très connu / Very famous",
-      "Très bonne continuité / Great continuity",
-      "Excellent personnage d’expo / Excellent exhibition character"
-    ]
-  },
-
-  {
-    slug: "2019-batman-red-suit",
-    year: 2019,
-    title: "Batman",
-    subtitle: "Une variante très marquante",
-    image: "images/2019-batman-red-suit.jpg",
-    tags: ["Batman", "DC", "License", "Variant"],
-    fr: "Une version différente de Batman qui attire beaucoup l’attention.",
-    en: "A different Batman version that draws a lot of attention.",
-    facts: [
-      "Variante intéressante / Interesting variant",
-      "Très visuel / Very visual",
-      "Parfait pour l’expo / Perfect for exhibition"
-    ]
-  },
-
-  {
-    slug: "2019-groot",
-    year: 2019,
-    title: "Groot",
-    subtitle: "Une forme très différente",
-    image: "images/2019-groot.jpg",
-    tags: ["Marvel", "Guardians", "License", "Fun"],
-    fr: "Groot apporte une silhouette très différente au monde LEGO.",
-    en: "Groot brings a very different silhouette to the LEGO world.",
-    facts: [
-      "Très original / Very original",
-      "Très connu / Very well known",
-      "Excellent fun fact / Excellent fun fact"
-    ]
-  },
-
-  {
-    slug: "2019-dumbledore",
-    year: 2019,
-    title: "Dumbledore",
-    subtitle: "Une figure majeure du monde magique",
-    image: "images/2019-dumbledore.jpg",
-    tags: ["Harry Potter", "Magic", "License", "Character"],
-    fr: "Dumbledore ajoute une grande figure classique à l’univers Harry Potter LEGO.",
-    en: "Dumbledore adds a major classic figure to the LEGO Harry Potter universe.",
-    facts: [
-      "Très connu / Very well known",
-      "Barbe iconique / Iconic beard",
-      "Très belle présence / Great presence"
-    ]
-  },
-
-  {
-    slug: "2019-mandalorian",
-    year: 2019,
-    title: "The Mandalorian",
-    subtitle: "Une nouvelle ère Star Wars",
-    image: "images/2019-mandalorian.jpg",
-    tags: ["Star Wars", "License", "Modern", "Iconic"],
-    fr: "Le Mandalorian marque une nouvelle génération de Star Wars chez LEGO.",
-    en: "The Mandalorian marks a new generation of Star Wars in LEGO.",
-    facts: [
-      "Très populaire / Very popular",
-      "Armure iconique / Iconic armor",
-      "Nouvelle génération Star Wars / New Star Wars generation"
-    ]
-  },
-  {
-  slug: "2019-arctic-explorer",
-  year: 2019,
-  title: "Arctic Explorer",
-  subtitle: "City Arctic",
-  tags: ["City"],
-  fr: "Explorateur des régions polaires.",
-  en: "Arctic explorer.",
-  facts: [
-    "Thème exploration",
-    "Tenue spéciale grand froid",
-    "Bon contraste dans une expo"
-  ]
-}
-{
-  slug: "2020-cookie-monster",
-  year: 2020,
-  title: "Cookie Monster",
-  subtitle: "Sesame Street",
-  tags: ["Ideas", "TV"],
-  fr: "Macaron le glouton de Sesame Street.",
-  en: "Cookie Monster from Sesame Street.",
-  facts: [
-    "Figurine spéciale (forme unique)",
-    "Très populaire chez les enfants",
-    "Design non standard LEGO"
-  ]
-}
-{
-  slug: "2020-stay-puft",
-  year: 2020,
-  title: "Stay Puft",
-  subtitle: "Ghostbusters",
-  tags: ["Movie", "Ideas"],
-  fr: "Bonhomme Marshmallow de Ghostbusters.",
-  en: "Stay Puft Marshmallow Man.",
-  facts: [
-    "Personnage iconique du film",
-    "Design très distinctif",
-    "Attire immédiatement l’œil"
-  ]
-}
-  
-
-  {
-    slug: "2020-baby-yoda",
-    year: 2020,
-    title: "Grogu (Baby Yoda)",
-    subtitle: "Un phénomène mondial",
-    image: "images/2020-baby-yoda.jpg",
-    tags: ["Star Wars", "Cute", "Iconic", "Modern"],
-    fr: "Grogu est devenu une des figurines les plus adorées de LEGO.",
-    en: "Grogu became one of the most beloved LEGO figures.",
-    facts: [
-      "Très adorable / Very cute",
-      "Ultra populaire / Extremely popular",
-      "Attire tout le monde / Attracts everyone"
-    ]
-  },
-  {
-  slug: "2020-poppy",
-  year: 2020,
-  title: "Poppy",
-  subtitle: "Trolls",
-  tags: ["Movie", "Kids"],
-  fr: "Princesse Poppy du film Trolls.",
-  en: "Poppy from Trolls.",
-  facts: [
-    "Très colorée",
-    "Attire les enfants",
-    "Style complètement différent LEGO classique"
-  ]
-}
-
-  {
-    slug: "2020-iron-man",
-    year: 2020,
-    title: "Iron Man",
-    subtitle: "Une icône Marvel moderne",
-    image: "images/2020-iron-man.jpg",
-    tags: ["Marvel", "Avengers", "License", "Iconic"],
-    fr: "Iron Man reste une des plus grandes figures modernes de LEGO.",
-    en: "Iron Man remains one of LEGO’s biggest modern figures.",
-    facts: [
-      "Très reconnu / Very recognizable",
-      "Armure brillante / Shiny armor",
-      "Très populaire / Very popular"
-    ]
-  },
-
-  {
-    slug: "2020-minecraft-creeper",
-    year: 2020,
-    title: "Minecraft Creeper",
-    subtitle: "Toujours aussi iconique",
-    image: "images/2020-creeper.jpg",
-    tags: ["Minecraft", "Video Game", "Iconic", "Modern"],
-    fr: "Le Creeper reste une des figures les plus connues chez LEGO.",
-    en: "The Creeper remains one of the most iconic LEGO figures.",
-    facts: [
-      "Très reconnaissable / Very recognizable",
-      "Design simple / Simple design",
-      "Très aimé des jeunes / Loved by kids"
-    ]
-  },
-{
-  slug: "2021-winnie-pooh",
-  year: 2021,
-  title: "Winnie the Pooh",
-  subtitle: "Disney",
-  tags: ["Disney", "Ideas"],
-  fr: "Winnie l’ourson avec son pot de miel.",
-  en: "Winnie the Pooh with honey pot.",
-  facts: [
-    "Licence Disney très forte",
-    "Attire enfants ET adultes",
-    "Très photogénique en expo"
-  ]
-}
-  {
-    slug: "2021-spider-man",
-    year: 2021,
-    title: "Spider-Man",
-    subtitle: "Toujours au sommet",
-    image: "images/2021-spider-man.jpg",
-    tags: ["Marvel", "Super Heroes", "License", "Iconic"],
-    fr: "Spider-Man reste un des héros les plus populaires de LEGO.",
-    en: "Spider-Man remains one of LEGO’s most popular heroes.",
-    facts: [
-      "Très agile / Very agile",
-      "Très populaire / Very popular",
-      "Toujours pertinent / Always relevant"
-    ]
-  },
-
-  {
-    slug: "2021-harry-potter",
-    year: 2021,
-    title: "Harry Potter",
-    subtitle: "Une magie intemporelle",
-    image: "images/2021-harry-potter.jpg",
-    tags: ["Harry Potter", "Magic", "License", "Iconic"],
-    fr: "Harry Potter continue d’être une licence majeure chez LEGO.",
-    en: "Harry Potter continues to be a major LEGO license.",
-    facts: [
-      "Toujours populaire / Always popular",
-      "Univers riche / Rich universe",
-      "Très apprécié / Highly appreciated"
-    ]
-  },
-
-  {
-    slug: "2022-batman",
-    year: 2022,
-    title: "Batman",
-    subtitle: "Une version plus moderne",
-    image: "images/2022-batman.jpg",
-    tags: ["Batman", "DC", "License", "Modern"],
-    fr: "Batman évolue avec des designs plus modernes et détaillés.",
-    en: "Batman evolves with more modern and detailed designs.",
-    facts: [
-      "Très sombre / Dark style",
-      "Très détaillé / Very detailed",
-      "Toujours iconique / Always iconic"
-    ]
-  },
-
-  {
-    slug: "2022-thor",
-    year: 2022,
-    title: "Thor",
-    subtitle: "Le dieu du tonnerre",
-    image: "images/2022-thor.jpg",
-    tags: ["Marvel", "Avengers", "License", "Iconic"],
-    fr: "Thor apporte puissance et style à la collection LEGO.",
-    en: "Thor brings power and style to the LEGO collection.",
-    facts: [
-      "Très puissant / Very powerful",
-      "Marteau iconique / Iconic hammer",
-      "Très visuel / Very visual"
-    ]
-  },
-
-  {
-    slug: "2023-sonic",
-    year: 2023,
-    title: "Sonic",
-    subtitle: "Retour du héros bleu",
-    image: "images/2023-sonic.jpg",
-    tags: ["Sonic", "Video Game", "License", "Modern"],
-    fr: "Sonic revient avec de nouvelles versions modernes.",
-    en: "Sonic returns with new modern versions.",
-    facts: [
-      "Très rapide / Very fast",
-      "Très reconnaissable / Very recognizable",
-      "Très fun / Very fun"
-    ]
-  },
-
-  {
-    slug: "2023-mandalorian",
-    year: 2023,
-    title: "Mandalorian & Grogu",
-    subtitle: "Un duo incontournable",
-    image: "images/2023-mando-grogu.jpg",
-    tags: ["Star Wars", "Duo", "License", "Iconic"],
-    fr: "Le duo Mandalorian et Grogu est devenu incontournable.",
-    en: "The Mandalorian and Grogu duo became essential.",
-    facts: [
-      "Très populaire / Very popular",
-      "Excellent duo / Great duo",
-      "Très fort visuellement / Very strong visually"
-    ]
-  },
-{
-  slug: "2024-lizard-man",
-  year: 2024,
-  title: "Lizard Man",
-  subtitle: "Ideas / Fantasy",
-  tags: ["Ideas"],
-  fr: "Créature reptilienne fantastique.",
-  en: "Fantasy reptilian creature.",
-  facts: [
-    "Design très détaillé",
-    "Style médiéval / fantasy",
-    "Attire l’attention facilement"
-  ]
-}
-  {
-    slug: "2024-minecraft",
-    year: 2024,
-    title: "Minecraft",
-    subtitle: "Toujours dominant",
-    image: "images/2024-minecraft.jpg",
-    tags: ["Minecraft", "Video Game", "Modern", "Iconic"],
-    fr: "Minecraft reste un des univers les plus forts chez LEGO.",
-    en: "Minecraft remains one of LEGO’s strongest universes.",
-    facts: [
-      "Très populaire / Very popular",
-      "Univers en expansion / Expanding universe",
-      "Très apprécié des jeunes / Loved by kids"
-    ]
-  },
-
-  {
-    slug: "2024-marvel",
-    year: 2024,
-    title: "Marvel Heroes",
-    subtitle: "Une collection toujours forte",
-    image: "images/2024-marvel.jpg",
-    tags: ["Marvel", "Super Heroes", "License", "Modern"],
-    fr: "Les super-héros Marvel dominent toujours les collections LEGO modernes.",
-    en: "Marvel superheroes still dominate modern LEGO collections.",
-    facts: [
-      "Très populaire / Very popular",
-      "Beaucoup de personnages / Many characters",
-      "Très dynamique / Very dynamic"
-    ]
-  },
-  
-{
-  slug: "classic-ghost",
-  year: "Classic",
-  title: "Ghost",
-  subtitle: "Classic LEGO",
-  tags: ["Classic"],
-  fr: "Fantôme LEGO classique.",
-  en: "Classic LEGO ghost.",
-  facts: [
-    "Design intemporel",
-    "Très simple mais iconique",
-    "Nostalgie garantie"
-  ]
-}
-{
-  slug: "ghost-translucent",
-  year: "Modern",
-  title: "Ghost Variant",
-  subtitle: "Translucent",
-  tags: ["Special"],
-  fr: "Version moderne translucide.",
-  en: "Modern translucent ghost.",
-  facts: [
-    "Effet visuel intéressant",
-    "Plus rare que le classique",
-    "Bon contraste en vitrine"
-  ]
-}
-  {
-    slug: "2025-modern-minifigure",
-    year: 2025,
-    title: "Modern LEGO Minifigure",
-    subtitle: "L’évolution continue",
-    image: "images/2025-modern.jpg",
-    tags: ["Modern", "Evolution", "Future", "Design"],
-    fr: "Les minifigurines LEGO continuent d’évoluer avec plus de détails et de diversité.",
-    en: "LEGO minifigures continue to evolve with more detail and diversity.",
-    facts: [
-      "Très détaillé / Very detailed",
-      "Grande diversité / Great diversity",
-      "Toujours en évolution / Always evolving"
-    ]
-  }
-];
-
-    const gallery = document.getElementById("gallery");
+    const figures = [
+      {
+        slug: "1978-first-true-minifigure",
+        year: 1978,
+        title: "First True LEGO Minifigure",
+        subtitle: "La naissance de la minifigurine classique",
+        image: "images/1978-first-true-minifigure.jpg",
+        tags: ["First", "Classic", "Town", "History"],
+        fr: "En 1978 apparaît la première vraie minifigurine LEGO telle qu’on la reconnaît encore aujourd’hui : tête jaune souriante, bras articulés, mains en forme de pince et jambes séparées. C’est l’un des plus grands tournants de toute l’histoire LEGO.",
+        en: "In 1978, the first true LEGO minifigure appears in the form we still recognize today: yellow smiling head, movable arms, claw hands, and separate legs. It is one of the biggest turning points in LEGO history.",
+        facts: [
+          "Première vraie minifigurine LEGO / First true LEGO minifigure"
+        ]
+      },
+      {
+        slug: "1979-yellow-spaceman",
+        year: 1979,
+        title: "Yellow Spaceman",
+        subtitle: "Première grande icône de l’espace LEGO",
+        image: "images/1979-yellow-spaceman.jpg",
+        tags: ["Space", "First", "Iconic"],
+        fr: "Le cosmonaute jaune est l’un des personnages les plus emblématiques de l’histoire LEGO. Il représente le début de l’âge d’or de l’espace classique et reste encore aujourd’hui une icône immédiatement reconnaissable.",
+        en: "The yellow spaceman is one of the most iconic characters in LEGO history. It represents the beginning of the golden age of classic space and remains instantly recognizable today.",
+        facts: []
+      },
+      {
+        slug: "1979-freddy-fox-fabuland",
+        year: 1979,
+        title: "Freddy Fox – Fabuland",
+        subtitle: "Les têtes animales arrivent chez LEGO",
+        image: "images/1979-freddy-fox.jpg",
+        tags: ["Fabuland", "Animal", "First", "Fun"],
+        fr: "Freddy Fox représente l’arrivée des figurines LEGO Fabuland à tête d’animal. Cette gamme a une identité visuelle très différente, plus douce et plus narrative, pensée pour les jeunes enfants et les histoires de personnages.",
+        en: "Freddy Fox represents the arrival of LEGO Fabuland animal-headed figures. This line has a very different visual identity, softer and more story-driven, designed for younger children and character-based play.",
+        facts: []
+      },
+      {
+        slug: "1979-first-chef-hat",
+        year: 1979,
+        title: "First Chef’s Hat",
+        subtitle: "La cuisine entre dans l’univers LEGO",
+        image: "images/1979-first-chef.jpg",
+        tags: ["Town", "Accessory", "First", "Fun"],
+        fr: "Le chapeau de chef est un bel exemple d’accessoire marquant apparu dans les premières années de la minifigurine. Il montre comment LEGO enrichissait déjà les métiers et les identités visuelles de ses personnages.",
+        en: "The chef’s hat is a great example of a memorable accessory introduced in the early years of the minifigure. It shows how LEGO was already expanding professions and visual identities for its characters.",
+        facts: [
+          "Premier chapeau de chef LEGO / First LEGO chef’s hat"
+        ]
+      },
+      {
+        slug: "1980-first-top-hat",
+        year: 1980,
+        title: "First Top Hat",
+        subtitle: "Un petit accessoire, un grand style",
+        image: "images/1980-top-hat.jpg",
+        tags: ["Accessory", "First", "Town"],
+        fr: "Le haut-de-forme de 1980 est une petite pièce, mais il ajoute immédiatement du style et de l’élégance à une minifigurine. C’est le genre de détail qui montre à quel point LEGO développait déjà une bibliothèque d’accessoires riche et mémorable.",
+        en: "The 1980 top hat is a small piece, but it instantly gives a minifigure elegance and style. It is the kind of detail that shows how LEGO was already building a rich and memorable library of accessories.",
+        facts: [
+          "Premier haut-de-forme LEGO / First LEGO top hat"
+        ]
+      },
+      {
+        slug: "1981-medic",
+        year: 1981,
+        title: "Medic",
+        subtitle: "Les services d’urgence prennent vie",
+        image: "images/1981-medic.jpg",
+        tags: ["Town", "Medical", "Service"],
+        fr: "La figurine du médecin ou du secouriste illustre bien l’expansion du monde LEGO Town. Les personnages ne sont plus seulement génériques : ils représentent désormais des rôles professionnels précis dans une ville en pleine construction.",
+        en: "The medic figure nicely illustrates the expansion of the LEGO Town world. Characters are no longer just generic people: they now represent specific professional roles within a growing city.",
+        facts: []
+      },
+      {
+        slug: "1984-black-falcon",
+        year: 1984,
+        title: "Black Falcon Knight",
+        subtitle: "Le médiéval classique prend forme",
+        image: "images/1984-black-falcon.jpg",
+        tags: ["Castle", "Knight", "Iconic"],
+        fr: "Le chevalier Black Falcon est l’un des personnages les plus marquants de l’ère Castle. Avec son bouclier et son blason reconnaissable, il aide à définir l’esthétique médiévale classique de LEGO.",
+        en: "The Black Falcon knight is one of the most memorable characters of the Castle era. With his shield and recognizable crest, he helped define the classic medieval LEGO look.",
+        facts: []
+      },
+      {
+        slug: "1989-pirate",
+        year: 1989,
+        title: "Classic Pirate",
+        subtitle: "Le thème Pirates change tout",
+        image: "images/1989-pirate.jpg",
+        tags: ["Pirates", "First", "Iconic"],
+        fr: "L’arrivée des Pirates en 1989 marque une grande évolution dans l’histoire LEGO. Les personnages deviennent plus expressifs, plus aventuriers et plus théâtraux. Le pirate avec crochet ou jambe de bois est devenu instantanément légendaire.",
+        en: "The arrival of Pirates in 1989 marks a major evolution in LEGO history. Characters become more expressive, more adventurous, and more theatrical. The pirate with hook or peg leg instantly became legendary.",
+        facts: [
+          "Premières expressions faciales variées / First varied facial expressions"
+        ]
+      },
+      {
+        slug: "1989-curly-tail-monkey",
+        year: 1989,
+        title: "Curly-Tail Monkey",
+        subtitle: "Une créature LEGO pleine d’ingéniosité",
+        image: "images/1989-monkey.jpg",
+        tags: ["Animal", "Fun", "Design"],
+        fr: "Le singe à queue bouclée est un excellent exemple de créativité LEGO. Son design est particulièrement amusant, car certaines parties rappellent fortement l’univers des minifigurines et montrent comment LEGO réutilisait intelligemment ses formes.",
+        en: "The curly-tail monkey is a great example of LEGO creativity. Its design is especially fun because some parts strongly echo the minifigure world, showing how LEGO cleverly reused familiar shapes.",
+        facts: []
+      },
+      {
+        slug: "1991-female-pirate",
+        year: 1991,
+        title: "Female Pirate",
+        subtitle: "Le monde Pirates s’élargit",
+        image: "images/1991-female-pirate.jpg",
+        tags: ["Pirates", "Character", "Fun"],
+        fr: "La pirate féminine montre que LEGO enrichissait déjà ses thèmes avec des personnages plus variés. Dans une exposition, elle aide à illustrer l’évolution du casting et des rôles dans les univers LEGO.",
+        en: "The female pirate shows that LEGO was already enriching its themes with more varied characters. In an exhibition, it helps illustrate the evolution of casting and roles across LEGO worlds.",
+        facts: []
+      },
+      {
+        slug: "1992-black-bandit",
+        year: 1992,
+        title: "Black Bandit",
+        subtitle: "Un personnage plus dramatique et plus sombre",
+        image: "images/1992-black-bandit.jpg",
+        tags: ["Castle", "Character", "Dark"],
+        fr: "Cette figurine de bandit au style plus sombre reflète une époque où LEGO explore des personnages plus marqués, plus théâtraux et plus facilement reconnaissables en un seul coup d’œil.",
+        en: "This darker-style bandit figure reflects a period when LEGO explored more distinctive, more theatrical, and more instantly recognizable characters.",
+        facts: []
+      },
+      {
+        slug: "1996-timmy",
+        year: 1996,
+        title: "Timmy",
+        subtitle: "Première figurine avec un nez",
+        image: "images/1996-timmy.jpg",
+        tags: ["First", "Rare"],
+        fr: "Timmy est célèbre comme première minifigurine LEGO avec un nez. C’est une figurine très appréciée dans une exposition parce qu’elle montre une rupture évidente avec le style classique du visage LEGO.",
+        en: "Timmy is famous as the first LEGO minifigure with a nose. It is a very popular exhibition piece because it shows a clear break from the classic LEGO face style.",
+        facts: [
+          "Première minifigurine avec un nez / First LEGO minifigure with a nose"
+        ]
+      },
+      {
+        slug: "1997-indian-chief",
+        year: 1997,
+        title: "Indian Chief",
+        subtitle: "Un personnage historique de l’ère Western",
+        image: "images/1997-indian-chief.jpg",
+        tags: ["Western", "History", "Character"],
+        fr: "Ce personnage fait partie de l’ère Western et montre comment LEGO explorait des archétypes historiques et cinématographiques. Dans une exposition moderne, il peut aussi servir à parler de l’évolution des représentations culturelles au fil du temps.",
+        en: "This character belongs to the Western era and shows how LEGO explored historical and cinematic archetypes. In a modern exhibition, it can also help discuss how cultural representation evolves over time.",
+        facts: []
+      },
+      {
+        slug: "1998-pharaoh-hotep",
+        year: 1998,
+        title: "Pharaoh Hotep",
+        subtitle: "L’aventure archéologique avant l’explosion des licences",
+        image: "images/1998-pharaoh-hotep.jpg",
+        tags: ["Adventure", "Egypt", "Fun"],
+        fr: "Le pharaon Hotep représente bien l’esprit aventure LEGO de la fin des années 1990. Il apporte un look plus exotique, des accessoires distinctifs et une ambiance de chasse aux trésors très forte.",
+        en: "Pharaoh Hotep perfectly captures the LEGO adventure spirit of the late 1990s. It brings a more exotic look, distinctive accessories, and a strong treasure-hunting atmosphere.",
+        facts: []
+      },
+      {
+        slug: "1999-star-wars-arrives",
+        year: 1999,
+        title: "LEGO Star Wars Arrives",
+        subtitle: "Le début d’une révolution sous licence",
+        image: "images/1999-star-wars.jpg",
+        tags: ["Star Wars", "License", "First", "Iconic"],
+        fr: "L’arrivée de LEGO Star Wars en 1999 change profondément l’histoire de la marque. Les grandes licences deviennent soudain un pilier du monde LEGO, et les figurines inspirées du cinéma prennent une nouvelle importance.",
+        en: "The arrival of LEGO Star Wars in 1999 deeply changes the history of the brand. Major licenses suddenly become a pillar of the LEGO world, and movie-inspired minifigures gain a whole new importance.",
+        facts: [
+          "Première grande licence LEGO / First major LEGO license"
+        ]
+      },
+      {
+        slug: "2000-han-solo",
+        year: 2000,
+        title: "Han Solo",
+        subtitle: "Les héros de film deviennent des minifigurines",
+        image: "images/2000-han-solo.jpg",
+        tags: ["Star Wars", "Movie", "License"],
+        fr: "Han Solo illustre parfaitement la nouvelle direction de LEGO au tournant des années 2000 : transformer des personnages mythiques du cinéma en minifigurines de collection et de jeu.",
+        en: "Han Solo perfectly illustrates LEGO’s new direction at the turn of the 2000s: transforming legendary movie characters into collectible and playable minifigures.",
+        facts: []
+      },
+      {
+        slug: "2001-harry-potter-arrives",
+        year: 2001,
+        title: "Harry Potter Arrives",
+        subtitle: "La magie entre officiellement chez LEGO",
+        image: "images/2001-harry-potter.jpg",
+        tags: ["Harry Potter", "License", "Magic", "First"],
+        fr: "L’arrivée d’Harry Potter ouvre la porte à un univers magique immédiatement populaire. Pour une exposition, cette année est importante, car elle marque l’entrée d’une autre licence mondiale devenue incontournable chez LEGO.",
+        en: "The arrival of Harry Potter opens the door to an instantly popular magical universe. For an exhibition, this year matters because it marks the arrival of another global license that became essential for LEGO.",
+        facts: []
+      },
+      {
+        slug: "2002-spider-man",
+        year: 2002,
+        title: "Spider-Man",
+        subtitle: "Les super-héros LEGO commencent à prendre leur place",
+        image: "images/2002-spiderman.jpg",
+        tags: ["Super Heroes", "Marvel", "License", "First"],
+        fr: "Spider-Man représente une étape importante vers l’univers des super-héros LEGO. Cette arrivée prépare le terrain pour tout ce qui viendra plus tard avec Marvel et DC.",
+        en: "Spider-Man represents an important step toward the LEGO superhero universe. This arrival sets the stage for everything that would later come with Marvel and DC.",
+        facts: []
+      },
+      {
+        slug: "2003-nba-figure",
+        year: 2003,
+        title: "NBA Figure",
+        subtitle: "LEGO expérimente de nouvelles formes",
+        image: "images/2003-nba.jpg",
+        tags: ["Sports", "NBA", "Experiment", "Fun"],
+        fr: "Les figurines NBA sont fascinantes parce qu’elles montrent à quel point LEGO pouvait expérimenter. Le design s’éloigne du standard classique et tente quelque chose de beaucoup plus sportif et dynamique.",
+        en: "NBA figures are fascinating because they show how far LEGO could experiment. Their design moves away from the classic standard and tries something much more athletic and dynamic.",
+        facts: []
+      },
+      {
+        slug: "2006-batman",
+        year: 2006,
+        title: "Batman",
+        subtitle: "Une autre grande licence change l’exposition",
+        image: "images/2006-batman.jpg",
+        tags: ["Batman", "DC", "License", "Iconic"],
+        fr: "Batman est l’une des figures les plus fortes de l’ère moderne LEGO. Son arrivée renforce l’idée que les grandes licences populaires sont désormais au cœur de l’expérience LEGO.",
+        en: "Batman is one of the strongest figures of the modern LEGO era. His arrival reinforces the idea that major popular licenses are now central to the LEGO experience.",
+        facts: []
+      },
+      {
+        slug: "2008-indiana-jones",
+        year: 2008,
+        title: "Indiana Jones",
+        subtitle: "L’aventure cinéma rejoint LEGO",
+        image: "images/2008-indiana-jones.jpg",
+        tags: ["Indiana Jones", "Adventure", "Movie", "License"],
+        fr: "Indiana Jones apporte à LEGO une autre grande aventure cinématographique. C’est une figurine parfaite pour relier l’univers LEGO à l’imaginaire des fouilles, des temples et des explorations exotiques.",
+        en: "Indiana Jones brings another major cinematic adventure to LEGO. It is a perfect figure for connecting LEGO with the world of archaeology, temples, and exotic exploration.",
+        facts: []
+      },
+      {
+        slug: "2009-spongebob",
+        year: 2009,
+        title: "SpongeBob SquarePants",
+        subtitle: "La télévision animée entre dans la collection",
+        image: "images/2009-spongebob.jpg",
+        tags: ["TV", "Cartoon", "License", "Fun"],
+        fr: "Bob l’éponge montre que LEGO ne se limite plus au cinéma ou aux univers classiques. Les personnages de télévision et de dessins animés prennent aussi leur place dans le monde des minifigurines.",
+        en: "SpongeBob shows that LEGO is no longer limited to movies or classic in-house worlds. TV and cartoon characters also take their place in the minifigure universe.",
+        facts: []
+      },
+      {
+        slug: "2010-aayla-secura",
+        year: 2010,
+        title: "Aayla Secura",
+        subtitle: "Les personnages spécialisés deviennent plus nombreux",
+        image: "images/2010-aayla-secura.jpg",
+        tags: ["Star Wars", "Sci-Fi", "Character", "Detailed"],
+        fr: "Aayla Secura représente bien l’ère où LEGO produit de plus en plus de personnages spécifiques, secondaires ou très appréciés des fans. Le niveau de détail et la variété augmentent fortement.",
+        en: "Aayla Secura nicely represents the era when LEGO began producing more and more specific, secondary, or fan-favorite characters. Detail and variety increased dramatically.",
+        facts: []
+      },
+      {
+        slug: "2011-sensei-wu",
+        year: 2011,
+        title: "Sensei Wu",
+        subtitle: "Ninjago devient un pilier moderne",
+        image: "images/2011-sensei-wu.jpg",
+        tags: ["Ninjago", "Original Theme", "Modern Classic"],
+        fr: "Sensei Wu représente l’un des grands succès modernes de LEGO avec Ninjago. C’est un bon rappel que LEGO ne vit pas seulement de ses licences : la marque sait aussi créer ses propres héros iconiques.",
+        en: "Sensei Wu represents one of LEGO’s great modern successes with Ninjago. It is a good reminder that LEGO does not live only through licenses: the brand still creates its own iconic heroes.",
+        facts: []
+      },
+      {
+        slug: "2012-clockwork-robot",
+        year: 2012,
+        title: "Clockwork Robot",
+        subtitle: "Des silhouettes toujours plus originales",
+        image: "images/2012-clockwork-robot.jpg",
+        tags: ["Robot", "Sci-Fi", "Fun", "Design"],
+        fr: "Le robot mécanique montre à quel point LEGO pousse plus loin les formes, les impressions et les accessoires. Les figurines deviennent de plus en plus inventives, parfois presque hybrides entre minifigurine et créature.",
+        en: "The clockwork robot shows how LEGO pushes shapes, prints, and accessories further. Figures become more inventive, sometimes almost hybrid between a minifigure and a creature.",
+        facts: []
+      },
+      {
+        slug: "2013-donatello",
+        year: 2013,
+        title: "Donatello",
+        subtitle: "Les Tortues Ninja débarquent chez LEGO",
+        image: "images/2013-donatello.jpg",
+        tags: ["TMNT", "TV", "License", "Iconic"],
+        fr: "Donatello marque l’arrivée des Tortues Ninja chez LEGO. Cette gamme mélange nostalgie, culture populaire et design distinctif grâce aux têtes moulées très reconnaissables.",
+        en: "Donatello marks the arrival of the Teenage Mutant Ninja Turtles in LEGO form. This line blends nostalgia, pop culture, and distinctive design through highly recognizable molded heads.",
+        facts: []
+      },
+      {
+        slug: "2014-minecraft-steve",
+        year: 2014,
+        title: "Minecraft Steve",
+        subtitle: "Le jeu vidéo entre officiellement chez LEGO",
+        image: "images/2014-minecraft-steve.jpg",
+        tags: ["Minecraft", "Video Game", "License", "Modern"],
+        fr: "Steve de Minecraft montre que LEGO suit aussi l’évolution de la culture populaire numérique. Avec son style cubique très particulier, il est parfait pour montrer la rencontre entre deux univers de construction.",
+        en: "Minecraft Steve shows that LEGO also follows the evolution of digital popular culture. With his very distinctive blocky style, he is perfect for showing the meeting of two building worlds.",
+        facts: []
+      },
+      {
+        slug: "2015-scooby-doo",
+        year: 2015,
+        title: "Scooby-Doo",
+        subtitle: "Une licence rétro pleine de personnalité",
+        image: "images/2015-scooby-doo.jpg",
+        tags: ["Scooby-Doo", "TV", "Fun", "License"],
+        fr: "Scooby-Doo apporte une énergie ludique et nostalgique à la collection. C’est le type de personnage qui fait sourire immédiatement et qui montre que LEGO sait aussi jouer avec la culture populaire rétro.",
+        en: "Scooby-Doo brings playful and nostalgic energy to the collection. It is the kind of character that instantly makes people smile and shows that LEGO also plays with retro pop culture.",
+        facts: []
+      },
+      {
+        slug: "2016-beetlejuice",
+        year: 2016,
+        title: "Beetlejuice",
+        subtitle: "Le cinéma culte trouve sa place",
+        image: "images/2016-beetlejuice.jpg",
+        tags: ["Movie", "Fun", "Cult", "License"],
+        fr: "Beetlejuice représente bien l’élargissement de LEGO vers des références plus décalées, plus cultes et parfois plus inattendues. C’est une figurine très amusante dans une exposition.",
+        en: "Beetlejuice nicely represents LEGO’s expansion toward more offbeat, cult, and sometimes unexpected references. It is a very fun exhibition figure.",
+        facts: []
+      },
+      {
+        slug: "2017-sonic",
+        year: 2017,
+        title: "Sonic",
+        subtitle: "Une autre icône du jeu vidéo",
+        image: "images/2017-sonic.jpg",
+        tags: ["Sonic", "Video Game", "Fun", "License"],
+        fr: "Sonic est une figure parfaite pour illustrer la rencontre entre LEGO et le jeu vidéo culte. Son look bleu ultra reconnaissable attire immédiatement l’œil dans une vitrine.",
+        en: "Sonic is a perfect figure for illustrating the meeting between LEGO and iconic video games. His ultra-recognizable blue look immediately catches the eye in a display.",
+        facts: []
+      },
+      {
+        slug: "2018-harry-potter-return",
+        year: 2018,
+        title: "Harry Potter Returns",
+        subtitle: "Le monde magique revient en force",
+        image: "images/2018-harry-potter-return.jpg",
+        tags: ["Harry Potter", "Magic", "License", "Return"],
+        fr: "Le retour d’Harry Potter dans l’ère moderne LEGO montre la longévité exceptionnelle de certaines licences. C’est aussi une belle manière de relier les débuts des années 2000 à une nouvelle génération de collectionneurs.",
+        en: "Harry Potter’s return in the modern LEGO era shows the exceptional longevity of certain licenses. It is also a great way to connect the early 2000s with a new generation of collectors.",
+        facts: []
+      },
+      {
+        slug: "2019-mandalorian",
+        year: 2019,
+        title: "The Mandalorian",
+        subtitle: "Une nouvelle ère Star Wars",
+        image: "images/2019-mandalorian.jpg",
+        tags: ["Star Wars", "License", "Modern", "Iconic"],
+        fr: "Le Mandalorian marque une nouvelle génération de Star Wars chez LEGO. Son armure très reconnaissable en fait une pièce forte dans une vitrine moderne.",
+        en: "The Mandalorian marks a new generation of Star Wars in LEGO. Its iconic armor makes it a strong piece in a modern display.",
+        facts: []
+      },
+      {
+        slug: "2020-baby-yoda",
+        year: 2020,
+        title: "Grogu (Baby Yoda)",
+        subtitle: "Un phénomène mondial",
+        image: "images/2020-baby-yoda.jpg",
+        tags: ["Star Wars", "Cute", "Iconic", "Modern"],
+        fr: "Grogu est devenu l’un des personnages les plus adorés de l’ère récente. Dans une exposition, il attire immédiatement autant les enfants que les adultes.",
+        en: "Grogu became one of the most beloved characters of the recent era. In an exhibition, it immediately attracts both children and adults.",
+        facts: []
+      },
+      {
+        slug: "2021-spider-man",
+        year: 2021,
+        title: "Spider-Man",
+        subtitle: "Toujours au sommet",
+        image: "images/2021-spider-man.jpg",
+        tags: ["Marvel", "Super Heroes", "License", "Iconic"],
+        fr: "Spider-Man reste l’un des héros les plus populaires de LEGO. Il représente parfaitement la force durable de l’univers super-héros dans les collections modernes.",
+        en: "Spider-Man remains one of LEGO’s most popular heroes. It perfectly represents the lasting strength of the superhero universe in modern collections.",
+        facts: []
+      },
+      {
+        slug: "2022-thor",
+        year: 2022,
+        title: "Thor",
+        subtitle: "Le dieu du tonnerre",
+        image: "images/2022-thor.jpg",
+        tags: ["Marvel", "Avengers", "License", "Iconic"],
+        fr: "Thor apporte puissance, silhouette forte et culture héroïque moderne à la collection. C’est une figurine très efficace visuellement dans une exposition.",
+        en: "Thor brings power, strong silhouette, and modern heroic culture to the collection. It is a very effective visual figure in an exhibition.",
+        facts: []
+      },
+      {
+        slug: "2023-sonic",
+        year: 2023,
+        title: "Sonic",
+        subtitle: "Retour du héros bleu",
+        image: "images/2023-sonic.jpg",
+        tags: ["Sonic", "Video Game", "License", "Modern"],
+        fr: "Le retour de Sonic montre que certaines icônes du jeu vidéo continuent de traverser les générations et restent très fortes dans l’univers LEGO.",
+        en: "Sonic’s return shows that some video game icons continue to span generations and remain very strong in the LEGO universe.",
+        facts: []
+      },
+      {
+        slug: "2023-mandalorian",
+        year: 2023,
+        title: "Mandalorian & Grogu",
+        subtitle: "Un duo incontournable",
+        image: "images/2023-mando-grogu.jpg",
+        tags: ["Star Wars", "Duo", "License", "Iconic"],
+        fr: "Le duo Mandalorian et Grogu est devenu incontournable dans les collections récentes. Ensemble, ils racontent immédiatement une histoire forte et moderne.",
+        en: "The Mandalorian and Grogu duo became essential in recent collections. Together, they immediately tell a strong and modern story.",
+        facts: []
+      },
+      {
+        slug: "2024-minecraft",
+        year: 2024,
+        title: "Minecraft",
+        subtitle: "Toujours dominant",
+        image: "images/2024-minecraft.jpg",
+        tags: ["Minecraft", "Video Game", "Modern", "Iconic"],
+        fr: "Minecraft reste l’un des univers les plus forts chez LEGO. Il montre à quel point le jeu vidéo et la construction sont devenus liés dans la culture populaire moderne.",
+        en: "Minecraft remains one of LEGO’s strongest universes. It shows how deeply gaming and building have become linked in modern popular culture.",
+        facts: []
+      },
+      {
+        slug: "2024-marvel",
+        year: 2024,
+        title: "Marvel Heroes",
+        subtitle: "Une collection toujours forte",
+        image: "images/2024-marvel.jpg",
+        tags: ["Marvel", "Super Heroes", "License", "Modern"],
+        fr: "Les super-héros Marvel dominent toujours les collections LEGO modernes. Ils représentent l’une des grandes forces actuelles du monde des minifigurines.",
+        en: "Marvel superheroes still dominate modern LEGO collections. They represent one of the major current strengths of the minifigure world.",
+        facts: []
+      },
+      {
+        slug: "2025-modern-minifigure",
+        year: 2025,
+        title: "Modern LEGO Minifigure",
+        subtitle: "L’évolution continue",
+        image: "images/2025-modern.jpg",
+        tags: ["Modern", "Evolution", "Future", "Design"],
+        fr: "Les minifigurines LEGO continuent d’évoluer avec plus de détails, plus de diversité et plus de personnalité. Cette entrée permet de conclure la chronologie sur une vision ouverte vers le futur.",
+        en: "LEGO minifigures continue to evolve with more detail, more diversity, and more personality. This entry helps conclude the timeline with an open view toward the future.",
+        facts: []
+      }
+    ];
+
+    const homepageList = document.getElementById("homepageList");
     const detailView = document.getElementById("detailView");
     const detailImage = document.getElementById("detailImage");
     const detailYear = document.getElementById("detailYear");
@@ -2795,91 +797,43 @@
     const detailEn = document.getElementById("detailEn");
     const detailFacts = document.getElementById("detailFacts");
     const detailMeta = document.getElementById("detailMeta");
-    const topbar = document.getElementById("topbar");
+    const factsTitle = document.getElementById("factsTitle");
 
-    const searchInput = document.getElementById("searchInput");
-    const yearFilter = document.getElementById("yearFilter");
-    const tagFilter = document.getElementById("tagFilter");
+    function renderHomepageList() {
+      const sortedFigures = [...figures].sort((a, b) => a.year - b.year);
 
-    function populateFilters() {
-      const years = [...new Set(figures.map(f => f.year))].sort((a, b) => a - b);
-      const tags = [...new Set(figures.flatMap(f => f.tags))].sort();
-
-      years.forEach(year => {
-        const option = document.createElement("option");
-        option.value = String(year);
-        option.textContent = year;
-        yearFilter.appendChild(option);
-      });
-
-      tags.forEach(tag => {
-        const option = document.createElement("option");
-        option.value = tag;
-        option.textContent = tag;
-        tagFilter.appendChild(option);
-      });
-    }
-
-    function createCard(figure) {
-      const cardLink = document.createElement("a");
-      cardLink.href = `?fig=${figure.slug}`;
-
-      const tagsHtml = figure.tags.map(tag => `<span class="tag">${tag}</span>`).join("");
-
-      cardLink.innerHTML = `
-        <article class="card">
-          <img src="${figure.image}" alt="${figure.title}">
-          <div class="card-content">
-            <span class="year-badge">${figure.year}</span>
-            <h2>${figure.title}</h2>
-            <p>${figure.fr}</p>
-            <div class="tags">${tagsHtml}</div>
-          </div>
-        </article>
+      homepageList.innerHTML = `
+        <h2>🏛️ Inventaire du musée / Museum Index</h2>
+        <p>
+          🇫🇷 Cliquez sur une figurine pour ouvrir sa fiche descriptive complète.<br>
+          🇬🇧 Click on a figure to open its full description page.
+        </p>
+        <div class="figure-list">
+          ${sortedFigures.map((figure, index) => `
+            <a class="figure-link" href="?fig=${figure.slug}">
+              <div class="figure-number">${index + 1}</div>
+              <div class="figure-text">
+                <strong>${figure.title}</strong>
+                <span>${figure.year} — ${figure.subtitle}</span>
+              </div>
+            </a>
+          `).join("")}
+        </div>
       `;
-
-      return cardLink;
-    }
-
-    function renderGallery() {
-      const search = searchInput.value.trim().toLowerCase();
-      const selectedYear = yearFilter.value;
-      const selectedTag = tagFilter.value;
-
-      const filtered = figures.filter(figure => {
-        const matchesSearch =
-          figure.title.toLowerCase().includes(search) ||
-          figure.subtitle.toLowerCase().includes(search) ||
-          figure.fr.toLowerCase().includes(search) ||
-          figure.en.toLowerCase().includes(search) ||
-          figure.tags.join(" ").toLowerCase().includes(search);
-
-        const matchesYear = selectedYear === "all" || String(figure.year) === selectedYear;
-        const matchesTag = selectedTag === "all" || figure.tags.includes(selectedTag);
-
-        return matchesSearch && matchesYear && matchesTag;
-      });
-
-      filtered.sort((a, b) => a.year - b.year);
-
-      gallery.innerHTML = "";
-      filtered.forEach(figure => {
-        gallery.appendChild(createCard(figure));
-      });
     }
 
     function showDetail(slug) {
       const figure = figures.find(f => f.slug === slug);
+
       if (!figure) {
         goHome();
         return;
       }
 
-      gallery.classList.add("hidden");
-      topbar.classList.add("hidden");
+      homepageList.classList.add("hidden");
       detailView.classList.add("active");
 
-      detailImage.src = figure.image;
+      detailImage.src = figure.image || "";
       detailImage.alt = figure.title;
       detailYear.textContent = figure.year;
       detailTitle.textContent = figure.title;
@@ -2888,11 +842,20 @@
       detailEn.textContent = figure.en;
 
       detailFacts.innerHTML = "";
-      figure.facts.forEach(fact => {
-        const li = document.createElement("li");
-        li.textContent = fact;
-        detailFacts.appendChild(li);
-      });
+
+      if (figure.facts && figure.facts.length > 0) {
+        factsTitle.style.display = "block";
+        detailFacts.style.display = "block";
+
+        figure.facts.forEach(fact => {
+          const li = document.createElement("li");
+          li.textContent = fact;
+          detailFacts.appendChild(li);
+        });
+      } else {
+        factsTitle.style.display = "none";
+        detailFacts.style.display = "none";
+      }
 
       detailMeta.innerHTML = "";
       figure.tags.forEach(tag => {
@@ -2905,9 +868,9 @@
 
     function goHome() {
       detailView.classList.remove("active");
-      gallery.classList.remove("hidden");
-      topbar.classList.remove("hidden");
+      homepageList.classList.remove("hidden");
       history.pushState({}, "", window.location.pathname);
+      renderHomepageList();
     }
 
     function handleRoute() {
@@ -2918,20 +881,13 @@
         showDetail(slug);
       } else {
         detailView.classList.remove("active");
-        gallery.classList.remove("hidden");
-        topbar.classList.remove("hidden");
-        renderGallery();
+        homepageList.classList.remove("hidden");
+        renderHomepageList();
       }
     }
 
-    searchInput.addEventListener("input", renderGallery);
-    yearFilter.addEventListener("change", renderGallery);
-    tagFilter.addEventListener("change", renderGallery);
-
-    populateFilters();
-    renderGallery();
+    renderHomepageList();
     handleRoute();
-
     window.addEventListener("popstate", handleRoute);
   </script>
 </body>
