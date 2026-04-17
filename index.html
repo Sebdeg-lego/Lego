@@ -351,6 +351,1006 @@
   <script>
     const figures = [
       {
+        <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEGO Expo Sébastien et Alice</title>
+
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --card: #ffffff;
+      --text: #1f1f1f;
+      --muted: #666;
+      --accent: #b22222;
+      --accent-dark: #7d1414;
+      --line: #ddd4c8;
+      --shadow: 0 8px 18px rgba(0,0,0,0.08);
+      --radius: 16px;
+      --max: 1400px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffffff, #f8f4ec);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 32px 20px 28px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 38px;
+      margin: 0 0 10px;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #444;
+      font-size: 16px;
+    }
+
+    .topbar {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search,
+    .filter {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: white;
+      font-size: 15px;
+      min-width: 220px;
+    }
+
+    .layout {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 20px 50px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid #efe7dc;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: #ececec;
+      display: block;
+    }
+
+    .card-content {
+      padding: 16px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .year-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      width: fit-content;
+      letter-spacing: 0.5px;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .card p {
+      margin: 0;
+      color: #555;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 4px;
+    }
+
+    .tag {
+      background: #f3ede4;
+      border: 1px solid #e5dacb;
+      color: #5e5141;
+      font-size: 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+    }
+
+    .detail {
+      display: none;
+      max-width: 1100px;
+      margin: 20px auto 50px;
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #efe7dc;
+    }
+
+    .detail.active {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .detail-image {
+      background: #eee;
+      min-height: 480px;
+    }
+
+    .detail-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .detail-content {
+      padding: 28px 26px 32px;
+      text-align: left;
+    }
+
+    .detail-year {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-weight: bold;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .detail h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    .detail h3 {
+      margin: 22px 0 10px;
+      font-size: 18px;
+      color: var(--accent-dark);
+    }
+
+    .detail p {
+      line-height: 1.7;
+      color: #333;
+      margin: 0 0 12px;
+    }
+
+    .detail ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .detail .meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--accent-dark);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .small-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      padding: 25px 20px 40px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 900px) {
+      .detail.active {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-image {
+        min-height: 320px;
+      }
+
+      .title {
+        font-size: 30px;
+      }
+
+      .detail h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1 class="title">🧱 LEGO Minifigure Museum</h1>
+      <p class="subtitle">
+        Bienvenue dans l’exposition LEGO de Sébastien et Alice.<br>
+        Découvrez les premières apparitions, les nouveautés marquantes et les figurines les plus spéciales de la collection.
+      </p>
+    </div>
+  </header>
+
+  <div class="topbar" id="topbar">
+    <input id="searchInput" class="search" type="text" placeholder="Rechercher / Search..." />
+    <select id="yearFilter" class="filter">
+      <option value="all">Toutes les années / All years</option>
+    </select>
+    <select id="tagFilter" class="filter">
+      <option value="all">Tous les thèmes / All themes</option>
+    </select>
+  </div>
+
+  <main class="layout">
+    <section id="gallery" class="gallery"></section>
+
+    <section id="detailView" class="detail">
+      <div class="detail-image">
+        <img id="detailImage" src="" alt="" />
+      </div>
+      <div class="detail-content">
+        <div class="back-link" onclick="goHome()">← Retour à la galerie / Back to gallery</div>
+        <div id="detailYear" class="detail-year"></div>
+        <h1 id="detailTitle"></h1>
+        <p id="detailSubtitle" style="font-size:16px; color:#555; margin-bottom:18px;"></p>
+
+        <h3>🇫🇷 Français</h3>
+        <p id="detailFr"></p>
+
+        <h3>🇬🇧 English</h3>
+        <p id="detailEn"></p>
+
+        <h3>✨ Faits intéressants / Fun facts</h3>
+        <ul id="detailFacts"></ul>
+
+        <div id="detailMeta" class="meta"></div>
+
+        <p class="small-note">
+          Cette base pourra être agrandie plus tard avec plus de figurines, de photos, des codes BrickLink, de la rareté et d’autres anecdotes.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © Sébastien LEGO Expo
+  </footer>
+
+  <script>
+    const figures = [
+      {
+        slug: "1974-family-figures",
+        year: 1974,
+        title: "LEGO Family Figures",
+        subtitle: "Les débuts des figurines LEGO",
+        image: "images/1974-family-figures.jpg",
+        tags: ["Early LEGO", "First", "History"],
+        fr: "Une des premières figurines LEGO, avec bras mobiles et corps construit en briques.",
+        en: "One of the first LEGO figures, with movable arms and a brick-built body.",
+        facts: [
+          "Avant la minifigurine classique",
+          "Visage peint",
+          "Corps très différent des minifigs modernes"
+        ]
+      },
+      {
+        slug: "1975-early-three-piece-red-hat",
+        year: 1975,
+        title: "Early Three-Piece Figure",
+        subtitle: "Une étape avant la minifigurine moderne",
+        image: "images/1975-early-three-piece-red-hat.jpg",
+        tags: ["Early LEGO", "First", "Pre-Minifigure"],
+        fr: "Petite figurine simple en 3 pièces, avant la minifigurine moderne.",
+        en: "Simple 3-piece figure from before the modern minifigure.",
+        facts: [
+          "Très peu de pièces",
+          "Pas de vrais bras ni jambes",
+          "Étape importante de l’évolution LEGO"
+        ]
+      },
+      {
+        slug: "1978-first-true-minifigure",
+        year: 1978,
+        title: "First True LEGO Minifigure",
+        subtitle: "La naissance du format classique",
+        image: "images/1978-first-true-minifigure.jpg",
+        tags: ["First", "Classic", "History", "Town"],
+        fr: "Première vraie minifigurine LEGO avec bras et jambes articulés.",
+        en: "First true LEGO minifigure with movable arms and legs.",
+        facts: [
+          "Début du format classique",
+          "Premier grand sourire LEGO",
+          "Très importante dans l’histoire LEGO"
+        ]
+      },
+      {
+        slug: "1979-yellow-spaceman",
+        year: 1979,
+        title: "Yellow Spaceman",
+        subtitle: "Une icône de l’espace LEGO",
+        image: "images/1979-yellow-spaceman.jpg",
+        tags: ["Space", "First", "Iconic"],
+        fr: "Première grande figurine emblématique de l’espace LEGO.",
+        en: "First great iconic figure from classic LEGO Space.",
+        facts: [
+          "Très célèbre",
+          "Icône des années Space",
+          "Très aimée des collectionneurs"
+        ]
+      },
+      {
+        slug: "1979-freddy-fox-fabuland",
+        year: 1979,
+        title: "Freddy Fox – Fabuland",
+        subtitle: "Les têtes d’animaux arrivent",
+        image: "images/1979-freddy-fox.jpg",
+        tags: ["Fabuland", "Animal", "First", "Fun"],
+        fr: "Une des premières figurines Fabuland avec tête d’animal.",
+        en: "One of the first Fabuland figures with an animal head.",
+        facts: [
+          "Style très différent",
+          "Univers plus doux et narratif",
+          "Figurine amusante pour l’expo"
+        ]
+      },
+      {
+        slug: "1979-first-chef-hat",
+        year: 1979,
+        title: "First Chef’s Hat",
+        subtitle: "Un accessoire marquant",
+        image: "images/1979-first-chef.jpg",
+        tags: ["Accessory", "First", "Town", "Fun"],
+        fr: "Première apparition du chapeau de chef chez LEGO.",
+        en: "First appearance of the LEGO chef’s hat.",
+        facts: [
+          "Petit accessoire historique",
+          "Ajoute du réalisme",
+          "Belle première apparition"
+        ]
+      },
+      {
+        slug: "1980-first-top-hat",
+        year: 1980,
+        title: "First Top Hat",
+        subtitle: "Une pièce élégante et historique",
+        image: "images/1980-top-hat.jpg",
+        tags: ["Accessory", "First", "Town"],
+        fr: "Première apparition du haut-de-forme chez LEGO.",
+        en: "First appearance of the LEGO top hat.",
+        facts: [
+          "Petit accessoire marquant",
+          "Donne beaucoup de style",
+          "Belle pièce historique"
+        ]
+      },
+      {
+        slug: "1981-medic",
+        year: 1981,
+        title: "Medic",
+        subtitle: "Les métiers prennent vie",
+        image: "images/1981-medic.jpg",
+        tags: ["Town", "Medical", "Service"],
+        fr: "Une figurine qui montre l’arrivée des métiers dans LEGO Town.",
+        en: "A figure that shows the arrival of professions in LEGO Town.",
+        facts: [
+          "Le monde LEGO devient plus réaliste",
+          "Les services de ville prennent forme",
+          "Bon exemple du thème Town"
+        ]
+      },
+      {
+        slug: "1984-black-falcon",
+        year: 1984,
+        title: "Black Falcon Knight",
+        subtitle: "Le classique médiéval LEGO",
+        image: "images/1984-black-falcon.jpg",
+        tags: ["Castle", "Knight", "Iconic"],
+        fr: "Un des chevaliers les plus marquants du thème Castle.",
+        en: "One of the most memorable knights from the Castle theme.",
+        facts: [
+          "Très aimé des fans Castle",
+          "Blason facilement reconnaissable",
+          "Grande figurine classique LEGO"
+        ]
+      },
+      {
+        slug: "1989-pirate",
+        year: 1989,
+        title: "Classic Pirate",
+        subtitle: "Le thème Pirates change tout",
+        image: "images/1989-pirate.jpg",
+        tags: ["Pirates", "First", "Iconic"],
+        fr: "Le pirate LEGO apporte plus d’aventure et plus de personnalité.",
+        en: "The LEGO pirate brings more adventure and more personality.",
+        facts: [
+          "Crochet et jambe de bois",
+          "Expressions plus variées",
+          "Grand tournant de l’histoire LEGO"
+        ]
+      },
+      {
+        slug: "1989-curly-tail-monkey",
+        year: 1989,
+        title: "Curly-Tail Monkey",
+        subtitle: "Une créature très amusante",
+        image: "images/1989-monkey.jpg",
+        tags: ["Animal", "Fun", "Design"],
+        fr: "Un animal LEGO original avec un design très amusant.",
+        en: "An original LEGO animal with a very fun design.",
+        facts: [
+          "Très bon fun fact",
+          "Design ingénieux",
+          "Parfait pour surprendre les visiteurs"
+        ]
+      },
+      {
+        slug: "1991-female-pirate",
+        year: 1991,
+        title: "Female Pirate",
+        subtitle: "Le monde Pirates s’agrandit",
+        image: "images/1991-female-pirate.jpg",
+        tags: ["Pirates", "Character", "Fun"],
+        fr: "Une pirate qui ajoute plus de variété au thème LEGO Pirates.",
+        en: "A pirate figure that adds more variety to the LEGO Pirates theme.",
+        facts: [
+          "Personnage marquant",
+          "Thème plus riche",
+          "Bonne évolution du monde Pirates"
+        ]
+      },
+      {
+        slug: "1992-black-bandit",
+        year: 1992,
+        title: "Black Bandit",
+        subtitle: "Un personnage plus sombre",
+        image: "images/1992-black-bandit.jpg",
+        tags: ["Castle", "Character", "Dark"],
+        fr: "Une figurine au style plus sombre et plus dramatique.",
+        en: "A figure with a darker and more dramatic style.",
+        facts: [
+          "Très forte présence visuelle",
+          "Change du style plus classique",
+          "Belle pièce de vitrine"
+        ]
+      },
+      {
+        slug: "1997-indian-chief",
+        year: 1997,
+        title: "Indian Chief",
+        subtitle: "Une figure forte de l’ère Western",
+        image: "images/1997-indian-chief.jpg",
+        tags: ["Western", "History", "Character"],
+        fr: "Un personnage marquant du thème Western LEGO.",
+        en: "A memorable character from the LEGO Western theme.",
+        facts: [
+          "Très reconnaissable",
+          "Bon repère historique",
+          "Peut ouvrir une discussion sur l’évolution des thèmes"
+        ]
+      },
+      {
+        slug: "1998-pharaoh-hotep",
+        year: 1998,
+        title: "Pharaoh Hotep",
+        subtitle: "L’aventure avant les grandes licences",
+        image: "images/1998-pharaoh-hotep.jpg",
+        tags: ["Adventure", "Egypt", "Fun"],
+        fr: "Une figurine d’aventure qui apporte mystère et trésors chez LEGO.",
+        en: "An adventure figure that brings mystery and treasure to LEGO.",
+        facts: [
+          "Style très fort",
+          "Look exotique",
+          "Belle transition vers les thèmes cinéma"
+        ]
+      },
+      {
+        slug: "1999-star-wars-arrives",
+        year: 1999,
+        title: "LEGO Star Wars Arrives",
+        subtitle: "Le début des grandes licences",
+        image: "images/1999-star-wars.jpg",
+        tags: ["Star Wars", "License", "First", "Iconic"],
+        fr: "L’arrivée de Star Wars change l’histoire moderne de LEGO.",
+        en: "The arrival of Star Wars changes the modern history of LEGO.",
+        facts: [
+          "Grand moment de la chronologie LEGO",
+          "Début des grosses licences",
+          "Très important pour les collectionneurs"
+        ]
+      },
+      {
+        slug: "2000-han-solo",
+        year: 2000,
+        title: "Han Solo",
+        subtitle: "Le cinéma devient minifigurine",
+        image: "images/2000-han-solo.jpg",
+        tags: ["Star Wars", "Movie", "License"],
+        fr: "Han Solo montre comment les héros de films entrent chez LEGO.",
+        en: "Han Solo shows how movie heroes enter the LEGO world.",
+        facts: [
+          "Très connu du public",
+          "Bonne figurine pop culture",
+          "Parfait lien entre LEGO et cinéma"
+        ]
+      },
+      {
+        slug: "2001-harry-potter-arrives",
+        year: 2001,
+        title: "Harry Potter Arrives",
+        subtitle: "La magie entre chez LEGO",
+        image: "images/2001-harry-potter.jpg",
+        tags: ["Harry Potter", "License", "Magic", "First"],
+        fr: "Harry Potter apporte la magie dans l’univers LEGO.",
+        en: "Harry Potter brings magic into the LEGO universe.",
+        facts: [
+          "Licence mondiale très forte",
+          "Très bon repère chronologique",
+          "Adoré par plusieurs générations"
+        ]
+      },
+      {
+        slug: "2002-spider-man",
+        year: 2002,
+        title: "Spider-Man",
+        subtitle: "Les super-héros arrivent",
+        image: "images/2002-spiderman.jpg",
+        tags: ["Super Heroes", "Marvel", "License", "First"],
+        fr: "Spider-Man marque l’arrivée importante des super-héros chez LEGO.",
+        en: "Spider-Man marks the important arrival of superheroes in LEGO.",
+        facts: [
+          "Très populaire",
+          "Prépare l’ère Marvel et DC",
+          "Excellent personnage d’expo"
+        ]
+      },
+      {
+        slug: "2003-nba-figure",
+        year: 2003,
+        title: "NBA Figure",
+        subtitle: "Une version LEGO différente",
+        image: "images/2003-nba.jpg",
+        tags: ["Sports", "NBA", "Experiment", "Fun"],
+        fr: "Une figurine NBA qui montre le côté expérimental de LEGO.",
+        en: "An NBA figure that shows LEGO’s experimental side.",
+        facts: [
+          "Très différente des minifigs normales",
+          "Souvent inconnue du public",
+          "Super fun fact pour l’expo"
+        ]
+      },
+      {
+        slug: "2004-harry-potter-expanded",
+        year: 2004,
+        title: "Harry Potter Expanded",
+        subtitle: "Le monde magique s’agrandit",
+        image: "images/2004-harry-potter.jpg",
+        tags: ["Harry Potter", "Magic", "License"],
+        fr: "Harry Potter continue de grandir et devient un univers fort chez LEGO.",
+        en: "Harry Potter keeps growing and becomes a strong LEGO universe.",
+        facts: [
+          "Très bonne continuité",
+          "Univers reconnu partout",
+          "Important pour les fans de magie"
+        ]
+      },
+      {
+        slug: "2006-batman",
+        year: 2006,
+        title: "Batman",
+        subtitle: "Une grande licence moderne",
+        image: "images/2006-batman.jpg",
+        tags: ["Batman", "DC", "License", "Iconic"],
+        fr: "Batman devient une des grandes figures modernes de LEGO.",
+        en: "Batman becomes one of the great modern LEGO figures.",
+        facts: [
+          "Très reconnaissable",
+          "Cape et masque iconiques",
+          "Figurine essentielle en expo"
+        ]
+      },
+      {
+        slug: "2008-indiana-jones",
+        year: 2008,
+        title: "Indiana Jones",
+        subtitle: "L’aventure cinéma rejoint LEGO",
+        image: "images/2008-indiana-jones.jpg",
+        tags: ["Indiana Jones", "Adventure", "Movie", "License"],
+        fr: "Indiana Jones ajoute une grande aventure de cinéma à LEGO.",
+        en: "Indiana Jones adds a major movie adventure to LEGO.",
+        facts: [
+          "Très bon lien avec les thèmes aventure",
+          "Personnage culte",
+          "Belle figurine narrative"
+        ]
+      },
+      {
+        slug: "2009-spongebob",
+        year: 2009,
+        title: "SpongeBob SquarePants",
+        subtitle: "La télévision entre dans la collection",
+        image: "images/2009-spongebob.jpg",
+        tags: ["TV", "Cartoon", "License", "Fun"],
+        fr: "Bob l’éponge apporte un style drôle et très différent à LEGO.",
+        en: "SpongeBob brings a funny and very different style to LEGO.",
+        facts: [
+          "Très amusant pour les visiteurs",
+          "Personnage ultra connu",
+          "Ajoute beaucoup de variété"
+        ]
+      },
+      {
+        slug: "2010-aayla-secura",
+        year: 2010,
+        title: "Aayla Secura",
+        subtitle: "Plus de variété dans Star Wars",
+        image: "images/2010-aayla-secura.jpg",
+        tags: ["Star Wars", "Sci-Fi", "Character", "Detailed"],
+        fr: "Une figurine Star Wars qui montre la richesse croissante des personnages.",
+        en: "A Star Wars figure that shows the growing richness of the characters.",
+        facts: [
+          "Plus de détails",
+          "Plus de personnages secondaires",
+          "Très bonne évolution des licences"
+        ]
+      },
+      {
+        slug: "2011-sensei-wu",
+        year: 2011,
+        title: "Sensei Wu",
+        subtitle: "Ninjago devient un classique moderne",
+        image: "images/2011-sensei-wu.jpg",
+        tags: ["Ninjago", "Original Theme", "Modern Classic"],
+        fr: "Sensei Wu représente un des grands succès originaux de LEGO moderne.",
+        en: "Sensei Wu represents one of the great original successes of modern LEGO.",
+        facts: [
+          "Important pour Ninjago",
+          "Montre que LEGO crée encore ses propres héros",
+          "Très bon repère moderne"
+        ]
+      },
+      {
+        slug: "2012-clockwork-robot",
+        year: 2012,
+        title: "Clockwork Robot",
+        subtitle: "Un design plus poussé",
+        image: "images/2012-clockwork-robot.jpg",
+        tags: ["Robot", "Sci-Fi", "Fun", "Design"],
+        fr: "Un robot LEGO qui montre un design plus original et plus détaillé.",
+        en: "A LEGO robot that shows a more original and more detailed design.",
+        facts: [
+          "Très visuel",
+          "Beau niveau de détail",
+          "Attire bien l’œil en vitrine"
+        ]
+      },
+      {
+        slug: "2013-donatello",
+        year: 2013,
+        title: "Donatello",
+        subtitle: "Les Tortues Ninja arrivent",
+        image: "images/2013-donatello.jpg",
+        tags: ["TMNT", "TV", "License", "Iconic"],
+        fr: "Donatello marque l’arrivée des Tortues Ninja chez LEGO.",
+        en: "Donatello marks the arrival of the Teenage Mutant Ninja Turtles in LEGO.",
+        facts: [
+          "Très reconnaissable",
+          "Tête spéciale",
+          "Très aimé des jeunes et adultes"
+        ]
+      },
+      {
+        slug: "2014-minecraft-steve",
+        year: 2014,
+        title: "Minecraft Steve",
+        subtitle: "Le jeu vidéo entre chez LEGO",
+        image: "images/2014-minecraft-steve.jpg",
+        tags: ["Minecraft", "Video Game", "License", "Modern"],
+        fr: "Steve montre la rencontre entre LEGO et le jeu vidéo Minecraft.",
+        en: "Steve shows the meeting between LEGO and the Minecraft video game.",
+        facts: [
+          "Style cubique unique",
+          "Très fort pour les jeunes visiteurs",
+          "Grand moment de culture populaire"
+        ]
+      },
+      {
+        slug: "2015-scooby-doo",
+        year: 2015,
+        title: "Scooby-Doo",
+        subtitle: "Une licence rétro très fun",
+        image: "images/2015-scooby-doo.jpg",
+        tags: ["Scooby-Doo", "TV", "Fun", "License"],
+        fr: "Scooby-Doo apporte humour, nostalgie et personnalité à la collection.",
+        en: "Scooby-Doo brings humor, nostalgia, and personality to the collection.",
+        facts: [
+          "Fait sourire immédiatement",
+          "Très bon personnage d’expo",
+          "Ajoute une touche rétro"
+        ]
+      },
+      {
+        slug: "2016-beetlejuice",
+        year: 2016,
+        title: "Beetlejuice",
+        subtitle: "Une référence culte inattendue",
+        image: "images/2016-beetlejuice.jpg",
+        tags: ["Movie", "Cult", "Fun", "License"],
+        fr: "Beetlejuice est une figurine surprenante et très amusante en exposition.",
+        en: "Beetlejuice is a surprising and very fun figure in an exhibition.",
+        facts: [
+          "Référence culte",
+          "Très original",
+          "Parfait pour surprendre les visiteurs"
+        ]
+      },
+      {
+        slug: "2017-sonic",
+        year: 2017,
+        title: "Sonic",
+        subtitle: "Une icône du jeu vidéo",
+        image: "images/2017-sonic.jpg",
+        tags: ["Sonic", "Video Game", "Fun", "License"],
+        fr: "Sonic apporte une autre grande icône du jeu vidéo chez LEGO.",
+        en: "Sonic brings another great video game icon into LEGO.",
+        facts: [
+          "Bleu très reconnaissable",
+          "Très populaire",
+          "Excellent personnage pop culture"
+        ]
+      },
+      {
+        slug: "2018-harry-potter-return",
+        year: 2018,
+        title: "Harry Potter Returns",
+        subtitle: "Le monde magique revient en force",
+        image: "images/2018-harry-potter-return.jpg",
+        tags: ["Harry Potter", "Magic", "License", "Return"],
+        fr: "Harry Potter revient et reconnecte une nouvelle génération à LEGO.",
+        en: "Harry Potter returns and reconnects a new generation to LEGO.",
+        facts: [
+          "Très bon retour de licence",
+          "Relie deux époques LEGO",
+          "Parfait pour une chronologie"
+        ]
+      }
+    ];
+
+    const gallery = document.getElementById("gallery");
+    const detailView = document.getElementById("detailView");
+    const detailImage = document.getElementById("detailImage");
+    const detailYear = document.getElementById("detailYear");
+    const detailTitle = document.getElementById("detailTitle");
+    const detailSubtitle = document.getElementById("detailSubtitle");
+    const detailFr = document.getElementById("detailFr");
+    const detailEn = document.getElementById("detailEn");
+    const detailFacts = document.getElementById("detailFacts");
+    const detailMeta = document.getElementById("detailMeta");
+    const topbar = document.getElementById("topbar");
+
+    const searchInput = document.getElementById("searchInput");
+    const yearFilter = document.getElementById("yearFilter");
+    const tagFilter = document.getElementById("tagFilter");
+
+    function populateFilters() {
+      const years = [...new Set(figures.map(f => f.year))].sort((a, b) => a - b);
+      const tags = [...new Set(figures.flatMap(f => f.tags))].sort();
+
+      years.forEach(year => {
+        const option = document.createElement("option");
+        option.value = String(year);
+        option.textContent = year;
+        yearFilter.appendChild(option);
+      });
+
+      tags.forEach(tag => {
+        const option = document.createElement("option");
+        option.value = tag;
+        option.textContent = tag;
+        tagFilter.appendChild(option);
+      });
+    }
+
+    function createCard(figure) {
+      const cardLink = document.createElement("a");
+      cardLink.href = `?fig=${figure.slug}`;
+
+      const tagsHtml = figure.tags.map(tag => `<span class="tag">${tag}</span>`).join("");
+
+      cardLink.innerHTML = `
+        <article class="card">
+          <img src="${figure.image}" alt="${figure.title}">
+          <div class="card-content">
+            <span class="year-badge">${figure.year}</span>
+            <h2>${figure.title}</h2>
+            <p>${figure.fr}</p>
+            <div class="tags">${tagsHtml}</div>
+          </div>
+        </article>
+      `;
+
+      return cardLink;
+    }
+
+    function renderGallery() {
+      const search = searchInput.value.trim().toLowerCase();
+      const selectedYear = yearFilter.value;
+      const selectedTag = tagFilter.value;
+
+      const filtered = figures.filter(figure => {
+        const matchesSearch =
+          figure.title.toLowerCase().includes(search) ||
+          figure.subtitle.toLowerCase().includes(search) ||
+          figure.fr.toLowerCase().includes(search) ||
+          figure.en.toLowerCase().includes(search) ||
+          figure.tags.join(" ").toLowerCase().includes(search);
+
+        const matchesYear = selectedYear === "all" || String(figure.year) === selectedYear;
+        const matchesTag = selectedTag === "all" || figure.tags.includes(selectedTag);
+
+        return matchesSearch && matchesYear && matchesTag;
+      });
+
+      filtered.sort((a, b) => a.year - b.year);
+
+      gallery.innerHTML = "";
+      filtered.forEach(figure => {
+        gallery.appendChild(createCard(figure));
+      });
+    }
+
+    function showDetail(slug) {
+      const figure = figures.find(f => f.slug === slug);
+      if (!figure) {
+        goHome();
+        return;
+      }
+
+      gallery.classList.add("hidden");
+      topbar.classList.add("hidden");
+      detailView.classList.add("active");
+
+      detailImage.src = figure.image;
+      detailImage.alt = figure.title;
+      detailYear.textContent = figure.year;
+      detailTitle.textContent = figure.title;
+      detailSubtitle.textContent = figure.subtitle;
+      detailFr.textContent = figure.fr;
+      detailEn.textContent = figure.en;
+
+      detailFacts.innerHTML = "";
+      figure.facts.forEach(fact => {
+        const li = document.createElement("li");
+        li.textContent = fact;
+        detailFacts.appendChild(li);
+      });
+
+      detailMeta.innerHTML = "";
+      figure.tags.forEach(tag => {
+        const span = document.createElement("span");
+        span.className = "tag";
+        span.textContent = tag;
+        detailMeta.appendChild(span);
+      });
+    }
+
+    function goHome() {
+      detailView.classList.remove("active");
+      gallery.classList.remove("hidden");
+      topbar.classList.remove("hidden");
+      history.pushState({}, "", window.location.pathname);
+    }
+
+    function handleRoute() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("fig");
+
+      if (slug) {
+        showDetail(slug);
+      } else {
+        detailView.classList.remove("active");
+        gallery.classList.remove("hidden");
+        topbar.classList.remove("hidden");
+        renderGallery();
+      }
+    }
+
+    searchInput.addEventListener("input", renderGallery);
+    yearFilter.addEventListener("change", renderGallery);
+    tagFilter.addEventListener("change", renderGallery);
+
+    populateFilters();
+    renderGallery();
+    handleRoute();
+
+    window.addEventListener("popstate", handleRoute);
+  </script>
+</body>
+</html>
         slug: "1974-family-figures",
         year: 1974,
         title: "LEGO Family Figures",
